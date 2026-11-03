@@ -50,7 +50,37 @@ Got one, realised hype, about my capacity to learn and grow while I was doing wh
 - Lots of criticism at time about people searching for "data science unicorn" - 1 person who has the same skillset as you'd expect a whole team of people to have; unrealistic
 :::
 
-## (blank)
+## 2026
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-width: 10
+#| fig-height: 5
+#| fig-align: center
+library(ggwordcloud)
+
+hype <- data.frame(
+  word = c("agents", "RAG", "vector databases", "prompt engineering", "LLM-as-a-judge",
+           "evals", "AI data analyst", "text-to-SQL", "MCP", "embeddings",
+           "structured outputs", "fine-tuning", "synthetic data", "tool calling", "vibe coding",
+           "agentic workflows", "context engineering", "semantic layer",
+           "chat with your data", "LLMOps", "hallucination", "data agents", "harnesses",
+           "retrieval", "reranking", "chunking", "knowledge graphs", "GraphRAG",
+           "function calling", "few-shot", "chain-of-thought", "reasoning models",
+           "guardrails", "red teaming", "prompt injection", "context windows",
+           "multimodal", "copilots", "foundation models", "AI code review"),
+  weight = c(10, 9, 8, 8, 7, 7, 7, 7, 6, 6, 6, 5, 5, 5, 5, 5, 5, 4, 4, 3, 3, 3, 3,
+             4, 3, 3, 3, 3, 4, 3, 3, 4, 3, 2, 3, 3, 3, 3, 3, 3)
+)
+
+set.seed(2026)
+ggplot(hype, aes(label = word, size = weight, colour = weight)) +
+  geom_text_wordcloud(family = "sans", rm_outside = TRUE) +
+  scale_size_area(max_size = 22) +
+  scale_colour_gradient(low = "#888888", high = "#107895") +
+  theme_void()
+```
 
 ::: {.notes}
 - Remind me of ppl talking about AI and AI skills in 2026 - RAG, agents, harnesses, vector databases
@@ -59,7 +89,11 @@ Got one, realised hype, about my capacity to learn and grow while I was doing wh
 
 ## AI skill threat
 
-![](images/cat-hicks-ai-skill-threat.jpg){.r-stretch}
+::: {.statement}
+"I am deeply afraid that the skills and expectations of my professional identity are changing, and I will not succeed."
+:::
+
+<small>Cat Hicks, [AI skill threat and contest cultures on software teams](https://www.drcathicks.com/post/new-research-from-me-ai-skill-threat-contest-cultures-on-software-teams)</small>
 
 ::: {.notes}
 The problem is that this can help us get in our own way - Cat Hicks talks about AI skill threat, the idea that the expectations of our professional identities and skills are changing and feeling like we're going to fail.
