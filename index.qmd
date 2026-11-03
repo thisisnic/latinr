@@ -251,16 +251,18 @@ Complicated codebase!
 
 ## Learning to maintain ellmer
 
-![](images/deepwiki-ellmer-diagram.jpg){.r-stretch}
+![](images/deepwiki-ellmer-chat-sequence.png){.r-stretch}
 
-<!-- Original note: "something like this but less words and more easily
-understandable and less distracting" - may want a simplified redraw.
-Source: https://deepwiki.com/tidyverse/ellmer/1-overview -->
+<!-- DeepWiki sequence diagram of a single chat turn: User -> Chat (R6) ->
+Provider (S7) -> HTTP (httr2) -> LLM API and back.
+Source: https://deepwiki.com/tidyverse/ellmer (Core Architecture > Chat Object and Lifecycle) -->
 
 ::: {.notes}
 DeepWiki - instead of having to draw out a diagram myself, AI can do it.
 
-And you might recognise this as a thing from dplyr, but how easy was it for AI to do it than it would be for me to take the time.
+This is one chat turn walking down through the layers and back up: Chat, Provider, httr2, the API.
+
+And it's correct - I checked it against the source. The function names in the labels are the real ones. That's the behaviour I'm recommending: let AI draw the map, then verify it, don't just trust the picture.
 
 Back to learning by analogy, I could ask AI what to read and in what order and summarise design decisions.
 
@@ -727,49 +729,92 @@ IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 19
 
 ::: {.notes}
 - This one was generated in March 2026. Steady decline, flattening at the end.
-- Looks like a fairly consistent pattern, even with AI becoming more prevalent, everything's under control, right?
+- Small blip in January. Let me tell you about January.
 :::
 
-## 
+## January 2026
 
-![](images/plots/new-contributors-per-month-october-2026.jpg){.r-stretch}
+- A new contributor, verbose comments, broad scope
+- Tests either excessive or missing
+- Doesn't match the codebase conventions
+- Never asks a question
 
 ::: {.notes}
-Wrong. Regenerated this a couple of weeks ago.
-
-What I think happened: models got good enough, people realised they can contribute with agents, and they are.
-
-It's a mix. Genuine: people who never thought they could contribute, now can. Great. Less good: code dumped that the author doesn't understand. Review feedback goes straight back into the AI. Maintainer burns hours. The person never comes back. Nobody learned anything.
-
-Hard: welcome the first group without spending all our time on the second.
-
-Mindset shift. Before, every PR got my full attention. Now that's draining.
+- Started noticing a pattern in PRs
+- Contributor wanted to contribute, used AI, didn't engage with the output before submitting
+- Not judging - my first PRs were for the achievement not the codebase, and I've made my own embarrassing AI mistakes (Claude pushed to upstream instead of my fork)
+- So I took it to the mailing list. Nervous - lots of negativity online about AI, and I use it myself
+- Community engaged thoughtfully, Andrew Lamb pointed me at DataFusion's existing guidelines, agreed a set in a week
 :::
 
-## Carrying on as-is
+## Arrow's AI guidelines
 
-Consequences:
+- Only submit a PR if you can debug and own the changes yourself
+- Match the style and conventions of the codebase
+- Be upfront about AI usage
+- Watch for verbose comments, unnecessary tests, incorrect fixes
+- Break large PRs into smaller ones
 
-- See the results of the AI report you wrote
-- Stress
-- Arguing with other maintainers (the you and kou thing)
-- Also, think about on ellmer - for you, both writing code and reviewing others'
-  - Cognitive load
-  - All the caffeine
-  - The guilt!
-  - Being meticulous and people just putting stuff back into AI (i.e. no pushback on reviews, make it transactional not social)
+::: {.notes}
+- Merged end of January. Other projects linked to it.
+- Blog post. Relief. We've got this.
+- And then the PRs went quiet through spring.
+:::
 
-## Initial attempt to sort it out
+## The effect
 
-- Written rules
-- Did it do anything?
-- Disclosure form
-  - No, but could see who deleted it and who didn't
-- Stuff from the report here, but the human side of it
+::: {.placeholder}
+PLACEHOLDER: something on screen for this moment. Not maintainer quotes. Nic to decide.
+:::
 
-## Trying to change
+::: {.notes}
+- Frustration. Real emotional frustration.
+- I hated reviewing PRs from new contributors. Me. The person who only got here because people were patient with my first PRs.
+- Found myself arguing with other maintainers about how to handle them.
+- Had to think about it differently and didn't know how.
+:::
 
-- How can I keep up?
+## More rules
+
+::: {.placeholder}
+PLACEHOLDER IMAGE: the AI disclosure checkboxes from the Arrow PR template.
+:::
+
+::: {.notes}
+- Linked the guidelines from the PR template. Then added a disclosure form: was this written by a human or AI, was it reviewed before submission.
+- Did it do anything? Not really. About a third of people just delete the section.
+- Which, to be fair, is a useful tell.
+:::
+
+## Get a robot to review it
+
+::: {.placeholder}
+PLACEHOLDER IMAGE: a Copilot review comment on an Arrow PR, ideally one that's wrong.
+:::
+
+::: {.notes}
+- Turned on Copilot auto-review. A machine to do the first look so we don't have to.
+- Wrong often enough that you end up reviewing the reviewer. Now there's the PR and the bot's opinion of the PR, and I'm cleaning up both.
+:::
+
+## One PR after another
+
+::: {.notes}
+- Then the stuff I did to myself.
+- Unspoken expectation: they're generating PRs fast, so I should review fast. One after another after another.
+- Abandoned the slow, methodical process I'd always used. Didn't notice I'd done it until recently.
+:::
+
+## All the caffeine
+
+::: {.placeholder}
+PLACEHOLDER IMAGE: coffee. Lots of it.
+:::
+
+::: {.notes}
+- Why not just stop? Guilt. Someone put effort into this, or I assumed they did. I owe them a review.
+- So, more coffee.
+:::
 
 ## How do air traffic controllers maintain concentration?
 
@@ -787,7 +832,21 @@ Consequences:
 ![](images/zuckerberg-tshirts.jpg){.r-stretch}
 
 ::: {.notes}
-Could go further and reduce the number of decisions to make. Zuckerberg's t-shirts: fewer decisions in the day.
+- If attention is the bottleneck, reduce the number of decisions. Zuckerberg wears the same t-shirt every day so he doesn't have to decide.
+- So there I am, a maintainer of an open source project, researching how to optimise my shirts so I can review more pull requests nobody read before sending.
+- That's the reverse centaur. Rearranging myself around the machine's pace.
+:::
+
+##
+
+![](images/plots/new-contributors-per-month-october-2026.jpg){.r-stretch}
+
+::: {.notes}
+- Reran the analysis a couple of weeks ago. Oh. That's why.
+- PRs from accounts with nothing merged: about 7 a month in 2025. 106 in October. Over half of everything opened that month. None merged.
+- Models got good enough, people realised they can contribute with agents, and they are.
+- It's a mix. Genuine: people who never thought they could contribute, now can. Less good: code dumped that the author doesn't understand, review feedback goes straight back into the AI, nobody learned anything.
+- No amount of caffeine or t-shirts was going to cover a fifteenfold increase.
 :::
 
 ## Not becoming the reverse centaur
@@ -799,36 +858,34 @@ Could go further and reduce the number of decisions to make. Zuckerberg's t-shir
 
 ![](images/bluesky-hadley-no-one-forcing-you.jpg){.r-stretch}
 
-## Set boundaries!!!
+::: {.notes}
+- Spent a lot of time on Bluesky seeing how other maintainers were dealing with this. Mostly: complaining. Same as me.
+- Then this. Hadley: no one is forcing you to read it.
+- Made me stop. I'd been treating the volume as the problem. The problem was what I thought I owed.
+:::
+
+## {.center}
 
 ::: {.statement}
 "How does \<prominent maintainer\> say no?"
 :::
 
 ::: {.notes}
+- Still felt guilty saying no. A PR is someone's effort. My instinct is to welcome them.
+- So I did the section 2 thing on my own problem. Got AI to read closed tidyverse PRs: how do Hadley and Jenny say no?
+- Answer: thank them, explain why. But mostly: treat a PR as a proposal, not a gift.
+- A friend saying "gig tonight?", not a distant relative's Christmas sweater, three sizes too big and not your colour. You can say no to a proposal without being rude.
+:::
+
+## Set boundaries!!!
+
+::: {.notes}
 (Watch video for Blythe's saying no bit.)
 
-- Stop working when I'm too tired to think and go for a walk or get a cup of tea
-- Intentionally slow down on some tasks
-- Set good boundaries, and refuse to respond to AI-heavy walls of text or output where there's no "proof of life"
-- Started feeling guilty about needing to say no so much, when some people have put time and effort into PRs, which led to my question where I asked AI "how does Hadley say no" and it summarised it by saying you should treat a PR like a proposal not a gift, so like a friend suggesting you go to a concert by an artist you don't know if you like, and not a sweater 3 sizes too big and not in your colour that a distant relative gifts you for Xmas
-  - Engage with humans more
-- Stopped trying to get things done faster, remain in control
-
-Point was - started off thinking I was the one needing to change, and that's when you become the reverse centaur.
-
-Figure out what works for you and update your workflows, not how you can change for it. Key was - I was trying to work harder but I needed to work differently.
-
----
-
-3. Boundaries. With myself first: too tired to think -> tea, walk. Intentionally slow down on some tasks. Stop trying to go faster.
-
-- With others: AI wall-of-text issue -> I don't read it. Get a summary, or "can you explain this in your own words?"
-- Social fatigue: felt guilty saying no so much. A PR is someone's effort. My instinct is to welcome them.
-- So I did the section-2 thing on my own problem. Got AI to read closed tidyverse PRs: how do Jenny and Hadley say no?
-- Answer: thank them, explain why. But mostly: treat a PR as a **proposal, not a gift**. A friend saying "gig tonight?", not grandma's beige sweater, three sizes too big.
-- I started off thinking I was the one who had to change. That's the reverse centaur. What had to change was outside me: workflows, boundaries, what I say yes to.
-- I was trying to work harder. I needed to work differently.
+- Once a PR is a proposal, you're allowed to say no to it. So: boundaries.
+- With myself first. Too tired to think: tea, walk. Intentionally slow down on some tasks. Stopped trying to go faster.
+- With others. AI wall of text: I don't read it. Ask for a summary, or "can you explain this in your own words?" No proof of life, no review.
+- Engage with the humans more, the output less.
 :::
 
 ## What does setting good boundaries look like?
@@ -841,15 +898,30 @@ Figure out what works for you and update your workflows, not how you can change 
 
 **You are allowed to say "no" without long justifications**
 
-- I'm not going to spend time reviewing long AI-generated pull requests from new contributors
+- I'm not going to read a 300-line AI-written PR description
 
 **Focus on your own actions not theirs**
 
-- I can't stop people submitting AI-generated pull requests but I can refuse to engage with them
+- I can't stop people submitting AI-generated pull requests, but I choose which ones get my time
 
 **"If \<X\> then \<Y\>"**
 
-- If a pull request hasn't been reviewed by a human before they submit it, I'm going to close it without review
+- If there are signs a human is engaged, they get the old, thorough review
+- If not, I close it without one
+- If it's a small docs fix, I just do it
+
+## Same tool, opposite roles
+
+- Copilot reviews the PR, I clean up after it
+- AI drafts a first pass, I read it, own it, act on it
+
+::: {.notes}
+- AI isn't completely out of the picture.
+- Copilot auto-review: machine reviews, I adjudicate its mistakes. Reverse centaur.
+- A first pass that I read and own: machine drafts, I decide. Centaur. It got me there faster, but the review is mine.
+- Teaching it to review meant writing down my own process. I had to decide what good looks like. My non-AI reviews got better too.
+- Generated code: walk me through a chunk at a time, not everything at once.
+:::
 
 ## (blank)
 
@@ -936,7 +1008,7 @@ Decision fatigue is huge thing! Vibe coded a thing to track decisions: repotrack
 ## {.center}
 
 ::: {.statement}
-Change your workflow, not yourself
+Work differently, not harder
 :::
 
 ## How can we use AI to make us more capable and not more dependent?
