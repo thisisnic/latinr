@@ -4,7 +4,7 @@ subtitle: "LatinR 2026"
 author: "Nic Crane"
 date: "2026-11-12"
 title-slide-attributes:
-  data-background-image: images/slide-001-000.jpg
+  data-background-image: images/retro-future-highway.jpg
   data-background-size: cover
   data-background-opacity: "0.4"
 format:
@@ -25,7 +25,7 @@ PhD in psych and stats, learned R, loved coding, heard about data science
 
 ## {.center}
 
-![](images/slide-003-001.jpg){.r-stretch}
+![](images/hbr-sexiest-job.jpg){.r-stretch}
 
 ::: {.notes}
 - "Sexiest job of 21st century"
@@ -35,7 +35,7 @@ PhD in psych and stats, learned R, loved coding, heard about data science
 
 ## {.center}
 
-![](images/slide-004-002.png){.r-stretch}
+![](images/skills-spreadsheet-2016.png){.r-stretch}
 
 ::: {.notes}
 Here's spreadsheet. Didn't ever fill, gave up and just applied for jobs.
@@ -44,7 +44,7 @@ Got one, realised hype, about my capacity to learn and grow while I was doing wh
 
 ## {.center}
 
-![](images/slide-005-004.jpg){.r-stretch}
+![](images/unicorn.jpg){.r-stretch}
 
 ::: {.notes}
 - Lots of criticism at time about people searching for "data science unicorn" - 1 person who has the same skillset as you'd expect a whole team of people to have; unrealistic
@@ -59,7 +59,7 @@ Got one, realised hype, about my capacity to learn and grow while I was doing wh
 
 ## AI skill threat
 
-![](images/slide-007-005.jpg){.r-stretch}
+![](images/cat-hicks-ai-skill-threat.jpg){.r-stretch}
 
 ::: {.notes}
 The problem is that this can help us get in our own way - Cat Hicks talks about AI skill threat, the idea that the expectations of our professional identities and skills are changing and feeling like we're going to fail.
@@ -73,7 +73,7 @@ But we can counter that if we're part of a learning culture, a culture based aro
 
 ## {.center}
 
-![](images/slide-008-006.jpg){.r-stretch}
+![](images/centaur.jpg){.r-stretch}
 
 ::: {.notes}
 If we do engage with AI, how do we go about doing this? Idea that AI degrades existing skillsets.
@@ -87,7 +87,7 @@ Favourite depiction is from Wes M at posit::conf, talks about idea by Cory Docto
 
 ## {.center}
 
-![](images/slide-009-007.jpg){.r-stretch}
+![](images/reverse-centaur-book-cover.jpg){.r-stretch}
 
 ::: {.notes}
 CD is a comp sci writer who talks about the reverse centaur.
@@ -113,7 +113,11 @@ Leads me to question... how can I use AI so I become more capable, and not depen
 So to answer this, I'm going to first talk about using AI for learning, by thinking about what it was like to start working on a new project in R before AI, and then what it was like to get started now that AI is so prevalent, and how I've stopped myself becoming the reverse centaur.
 :::
 
-# Learning about code {background-image="images/slide-011-008.jpg" background-size="cover" background-opacity="0.4"}
+# Learning about code
+
+::: {.placeholder}
+IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 1950s American style, warm gouache colours, slightly faded print texture. A bright classroom of the future: rows of students at individual desks each with a small glowing TV screen, a friendly robot teacher at a chalkboard covered in code and diagrams, a woman in a red dress at the front desk studying a punch-card manual with a confident smile. Optimistic, clean, atomic-age design. Wide 16:9 composition with uncluttered space in the lower left for a title."
+:::
 
 ## First open source contribution
 
@@ -130,13 +134,13 @@ Most of us didn't study CS, don't feel like "proper" software engineer but here 
 :::: {.columns}
 
 ::: {.column width="55%"}
-![](images/slide-013-009.png){width="100%"}
+![](images/mara-averick-tidyverse-talk.png){width="100%"}
 
-![](images/slide-013-013.jpg){width="100%"}
+![](images/typos-flowchart.jpg){width="100%"}
 :::
 
 ::: {.column width="45%"}
-![](images/slide-013-014.jpg){width="100%"}
+![](images/alex-hayes-broom-tweet.jpg){width="100%"}
 :::
 
 ::::
@@ -151,7 +155,7 @@ Made first open source contribution in 2018.
 
 ## 
 
-![](images/slide-014-015.jpg){.r-stretch}
+![](images/my-first-tidyverse-pr-tweet.jpg){.r-stretch}
 
 ::: {.notes}
 - Yay exciting
@@ -160,7 +164,7 @@ Made first open source contribution in 2018.
 
 ## {.center}
 
-![](images/slide-015-016.png){.r-stretch}
+![](images/arrow-logo.png){.r-stretch}
 
 ::: {.notes}
 - Project was arrow
@@ -201,7 +205,7 @@ But things have changed a lot since then...
 
 ## {.center}
 
-![](images/slide-017-018.png){.r-stretch}
+![](images/ellmer-hex.png){.r-stretch}
 
 ::: {.notes}
 - 2026 - doing some work as a contractor on ellmer
@@ -221,7 +225,7 @@ Complicated codebase!
 
 ## Learning to maintain ellmer
 
-![](images/slide-018-020.jpg){.r-stretch}
+![](images/deepwiki-ellmer-diagram.jpg){.r-stretch}
 
 <!-- Original note: "something like this but less words and more easily
 understandable and less distracting" - may want a simplified redraw.
@@ -520,7 +524,11 @@ Cat Hicks: after you complete significant work (which you can self-define, but I
 So another thing that I learned when I was developing the rapid learning skill was how AI made it really easy to play around with an idea and develop it further into something useful, and that's what I'm gonna talk about next.
 :::
 
-# Learning through experimentation {background-image="images/slide-036-025.jpg" background-size="cover" background-opacity="0.4"}
+# Learning through experimentation
+
+::: {.placeholder}
+IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 1950s American style, warm gouache colours, slightly faded print texture. A laboratory of the future: a woman in a red dress standing at a wall-sized control console covered in dials, reel-to-reel tapes and blinking lights, a tall silver robot beside her pointing at a glowing chart on a screen showing a jagged line going up. Through a large window, a star field and a ringed planet. Optimistic, clean, atomic-age design. Wide 16:9 composition with uncluttered space in the lower left for a title."
+:::
 
 ::: {.notes}
 - March 2026
@@ -544,7 +552,7 @@ So another thing that I learned when I was developing the rapid learning skill w
 
 ## How has the number of active contributors changed?
 
-![](images/plots/slide-038-026.jpg){.r-stretch}
+![](images/plots/active-contributors-90-day.jpg){.r-stretch}
 
 ::: {.notes}
 First question - how have the changes in Voltron Data existing as a company impacted the number of people contributing to Arrow?
@@ -558,7 +566,7 @@ Next question then - how many new contributors per month?
 
 ## A new metric...
 
-![](images/plots/slide-039-027.jpg){.r-stretch}
+![](images/plots/new-contributors-per-month-first-time-flag.jpg){.r-stretch}
 
 ::: {.notes}
 - A few each month
@@ -568,7 +576,7 @@ Next question then - how many new contributors per month?
 
 ## Wait... whut?!
 
-![](images/plots/slide-040-028.jpg){.r-stretch}
+![](images/plots/new-contributor-prs-opened-vs-merged.jpg){.r-stretch}
 
 ::: {.notes}
 - And we got this!
@@ -600,7 +608,7 @@ Scepticism -> think more about the "nothing merged" and then remembered - every 
 
 ## A revelation
 
-![](images/slide-043-029.jpg){.r-stretch}
+![](images/bluesky-release-contributors-post.jpg){.r-stretch}
 
 ::: {.notes}
 - Looks like this! So clearly we do have new contributors
@@ -612,7 +620,7 @@ Scepticism -> think more about the "nothing merged" and then remembered - every 
 
 ## What happens to new contributors' PRs?
 
-![](images/plots/slide-044-030.jpg){.r-stretch}
+![](images/plots/first-prs-by-outcome.jpg){.r-stretch}
 
 ::: {.notes}
 - Got this! Much more useful!
@@ -675,7 +683,11 @@ Ended up with a series of classifications...
 Use AI to run experiments cheaply and learn about your reality
 :::
 
-# Adapting how you work {background-image="images/slide-050-031.jpg" background-size="cover" background-opacity="0.4"}
+# Adapting how you work
+
+::: {.placeholder}
+IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 1950s American style, warm gouache colours, slightly faded print texture. The office of the future: a woman in a red dress relaxing in a bubble chair with a cup of tea, feet up, while a row of small cheerful robots do the filing and sort stacks of paper into pneumatic tubes. Monorails and flying cars pass by a huge curved window with a sunny city skyline. Optimistic, clean, atomic-age design. Wide 16:9 composition with uncluttered space in the lower left for a title."
+:::
 
 ::: {.notes}
 - Last piece of puzzle is about thinking about how we work
@@ -685,7 +697,7 @@ Use AI to run experiments cheaply and learn about your reality
 
 ## 
 
-![](images/plots/slide-051-032.jpg){.r-stretch}
+![](images/plots/new-contributors-per-month-march-2026.jpg){.r-stretch}
 
 ::: {.notes}
 - This one was generated in March 2026. Steady decline, flattening at the end.
@@ -694,7 +706,7 @@ Use AI to run experiments cheaply and learn about your reality
 
 ## 
 
-![](images/plots/slide-052-033.jpg){.r-stretch}
+![](images/plots/new-contributors-per-month-october-2026.jpg){.r-stretch}
 
 ::: {.notes}
 Wrong. Regenerated this a couple of weeks ago.
@@ -735,7 +747,7 @@ Consequences:
 
 ## How do air traffic controllers maintain concentration?
 
-![](images/slide-056-034.jpg){.r-stretch}
+![](images/air-traffic-control-nats.jpg){.r-stretch}
 
 ::: {.notes}
 - First instinct: how do people whose whole job is sustained concentration do it?
@@ -746,7 +758,7 @@ Consequences:
 
 ## 
 
-![](images/slide-057-035.jpg){.r-stretch}
+![](images/zuckerberg-tshirts.jpg){.r-stretch}
 
 ::: {.notes}
 Could go further and reduce the number of decisions to make. Zuckerberg's t-shirts: fewer decisions in the day.
@@ -759,7 +771,7 @@ Could go further and reduce the number of decisions to make. Zuckerberg's t-shir
 
 ## 
 
-![](images/slide-059-036.jpg){.r-stretch}
+![](images/bluesky-hadley-no-one-forcing-you.jpg){.r-stretch}
 
 ## Set boundaries!!!
 
@@ -885,7 +897,7 @@ Getting AI to do the boring bits
 
 ## 
 
-![](images/slide-071-037.jpg){.r-stretch}
+![](images/repotracker-waiting-for-update.jpg){.r-stretch}
 
 ::: {.notes}
 Decision fatigue is huge thing! Vibe coded a thing to track decisions: repotracker tool to track decisions I've made.
@@ -922,15 +934,15 @@ How can we use AI to make us more capable and not more dependent? 3 things:
 :::: {.columns}
 
 ::: {.column width="30%"}
-![](images/slide-074-039.png){height="380px" fig-align="center"}
+![](images/papyrus.png){height="380px" fig-align="center"}
 :::
 
 ::: {.column width="25%"}
-![](images/slide-074-038.jpg){height="380px" fig-align="center"}
+![](images/calculator.jpg){height="380px" fig-align="center"}
 :::
 
 ::: {.column width="45%"}
-![](images/slide-074-041.jpg){width="100%"}
+![](images/browser-address-bar.jpg){width="100%"}
 :::
 
 ::::
