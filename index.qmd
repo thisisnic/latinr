@@ -163,23 +163,15 @@ Working with R since 2010 but took until 2018 until first PR.
 Most of us didn't study CS, don't feel like "proper" software engineer but here we are doing things that "proper" software engineers do, but it's easy to feel intimidated which is why it took me so long.
 :::
 
-## 
+## 2018
 
-:::: {.columns}
+![](images/mara-averick-tidyverse-talk.png){.r-stretch}
 
-::: {.column width="55%"}
-![](images/mara-averick-tidyverse-talk.png){width="100%"}
+<small>posit.co/resources/videos/contributing-to-tidyverse-packages</small>
 
-![](images/typos-flowchart.jpg){width="100%"}
-:::
+##
 
-::: {.column width="45%"}
-![](images/alex-hayes-broom-tweet.jpg){width="100%"}
-:::
-
-::::
-
-[posit.co/resources/videos/contributing-to-tidyverse-packages](https://posit.co/resources/videos/contributing-to-tidyverse-packages)
+![](images/alex-hayes-broom-tweet.jpg){.r-stretch}
 
 ::: {.notes}
 rstudio::conf 2018, Mara Averick - how to contribute to the tidyverse: how to make a fork, how to make a PR, what to work on - contribute documentation.
