@@ -22,6 +22,39 @@
   text-align: left;
 }
 
+/* Centre every stretched image horizontally */
+.reveal img.r-stretch,
+.reveal .r-stretch {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Vertically centre the two sides of every two-column slide */
+.reveal div.columns {
+  align-items: center;
+  min-height: 440px;
+}
+
+/* Lists inside a column: no trailing margin, so the column centres on the text */
+.reveal div.column > ul:last-child,
+.reveal div.column > p:last-child {
+  margin-bottom: 0;
+}
+
+/* One huge glyph under a heading */
+.reveal .giant-emoji {
+  font-size: 6em;
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.reveal .giant-emoji p {
+  margin: 0;
+  transform: translateY(-0.12em);
+}
+
 /* Visible image placeholders; delete once real images are in */
 .reveal .placeholder {
   border: 2px dashed #999;

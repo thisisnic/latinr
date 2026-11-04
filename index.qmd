@@ -1,5 +1,5 @@
 ---
-title: "Talk title"  # TODO: confirm final title
+title: "Learning with AI"  # TODO: confirm final title
 subtitle: "LatinR 2026"
 author: "Nic Crane"
 date: "2026-11-12"
@@ -17,7 +17,9 @@ execute:
   eval: false
 ---
 
-## 2016
+## 2016 {.center}
+
+![](images/nic-2016-interview-wig.png){.r-stretch fig-align="center"}
 
 ::: {.notes}
 PhD in psych and stats, learned R, loved coding, heard about data science
@@ -33,7 +35,7 @@ PhD in psych and stats, learned R, loved coding, heard about data science
 - Made a neurotic list, tried to do lots
 :::
 
-## {.center}
+## Unrealistic Expectations {.center}
 
 ![](images/skills-spreadsheet-2016.png){.r-stretch}
 
@@ -42,9 +44,9 @@ Here's spreadsheet. Didn't ever fill, gave up and just applied for jobs.
 Got one, realised hype, about my capacity to learn and grow while I was doing what I already was doing.
 :::
 
-## {.center}
+## The Data Science Unicorn {.center}
 
-![](images/unicorn.jpg){.r-stretch}
+![](images/unicorn2.jpg){.r-stretch}
 
 ::: {.notes}
 - Lots of criticism at time about people searching for "data science unicorn" - 1 person who has the same skillset as you'd expect a whole team of people to have; unrealistic
@@ -53,8 +55,10 @@ Got one, realised hype, about my capacity to learn and grow while I was doing wh
 ## 2026
 
 ```{r}
+#| label: hype-wordcloud
 #| eval: true
 #| echo: false
+#| cache: true
 #| fig-width: 10
 #| fig-height: 5
 #| fig-align: center
@@ -77,7 +81,7 @@ hype <- data.frame(
 set.seed(2026)
 ggplot(hype, aes(label = word, size = weight, colour = weight)) +
   geom_text_wordcloud(family = "sans", rm_outside = TRUE) +
-  scale_size_area(max_size = 22) +
+  scale_size_area(max_size = 15) +
   scale_colour_gradient(low = "#888888", high = "#107895") +
   theme_void()
 ```
@@ -90,10 +94,10 @@ ggplot(hype, aes(label = word, size = weight, colour = weight)) +
 ## AI skill threat
 
 ::: {.statement}
-"I am deeply afraid that the skills and expectations of my professional identity are changing, and I will not succeed."
+Nearly half of developers show signs of AI skill threat - that their their current competencies will become obsolete due to AI
 :::
 
-<small>Cat Hicks, [AI skill threat and contest cultures on software teams](https://www.drcathicks.com/post/new-research-from-me-ai-skill-threat-contest-cultures-on-software-teams)</small>
+<small>Cat Hicks, [The New Developer: AI Skill Threat, Identity Change & Developer Thriving in the Transition to AI-Assisted Software Development](https://osf.io/preprints/psyarxiv/2gej5_v2)</small>
 
 ::: {.notes}
 The problem is that this can help us get in our own way - Cat Hicks talks about AI skill threat, the idea that the expectations of our professional identities and skills are changing and feeling like we're going to fail.
@@ -105,9 +109,26 @@ It's even more pronounced in women + gender minorities and other minorities.
 But we can counter that if we're part of a learning culture, a culture based around the belief we can learn, grow, develop, and take on new skills.
 :::
 
-## {.center}
+## Centaur
 
-![](images/centaur.jpg){.r-stretch}
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/centaur.jpg){height="480px"}
+:::
+
+::: {.column width="50%"}
+
+Human head and torso, horse body.
+
+Human judgement and thinking, with the speed and strength of the horse.
+
+**An enhanced human.**
+
+e.g. human assisted by AI
+:::
+
+::::
 
 ::: {.notes}
 If we do engage with AI, how do we go about doing this? Idea that AI degrades existing skillsets.
@@ -119,9 +140,28 @@ Fluency illusion, generating code and understanding it.
 Favourite depiction is from Wes M at posit::conf, talks about idea by Cory Doctorow.
 :::
 
-## {.center}
+## Reverse Centaur
 
-![](images/reverse-centaur-book-cover.jpg){.r-stretch}
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/reverse-centaur-book-cover.jpg){height="480px"}
+:::
+
+::: {.column width="50%"}
+
+Horse head, human legs.
+
+Can't really do much.
+
+**The worst of both worlds.**
+
+e.g. AI assisted by human
+
+<small>Cory Doctorow, via Wes McKinney at posit::conf</small>
+:::
+
+::::
 
 ::: {.notes}
 CD is a comp sci writer who talks about the reverse centaur.
@@ -138,7 +178,7 @@ Reverse centaur is a human sat there going "yes" without thinking to AI prompts,
 ## {.center}
 
 ::: {.statement}
-how can I use AI so I become more capable, and not dependent?
+how can we use AI so we become more capable, and not dependent?
 :::
 
 ::: {.notes}
@@ -153,42 +193,19 @@ So to answer this, I'm going to first talk about using AI for learning, by think
 IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 1950s American style, warm gouache colours, slightly faded print texture. A bright classroom of the future: rows of students at individual desks each with a small glowing TV screen, a friendly robot teacher at a chalkboard covered in code and diagrams, a woman in a red dress at the front desk studying a punch-card manual with a confident smile. Optimistic, clean, atomic-age design. Wide 16:9 composition with uncluttered space in the lower left for a title."
 :::
 
-## First open source contribution
+## First open source contribution - 2018
+
+![](images/firstcontrbtweet.png){width="620px" fig-align="center"}
+
 
 ::: {.notes}
 Now my job but before this, small voluntary contributions.
-
-Working with R since 2010 but took until 2018 until first PR.
-
-Most of us didn't study CS, don't feel like "proper" software engineer but here we are doing things that "proper" software engineers do, but it's easy to feel intimidated which is why it took me so long.
-:::
-
-## 2018
-
-![](images/mara-averick-tidyverse-talk.png){.r-stretch}
-
-<small>posit.co/resources/videos/contributing-to-tidyverse-packages</small>
-
-##
-
-![](images/alex-hayes-broom-tweet.jpg){.r-stretch}
-
-::: {.notes}
-rstudio::conf 2018, Mara Averick - how to contribute to the tidyverse: how to make a fork, how to make a PR, what to work on - contribute documentation.
-
 Made first open source contribution in 2018.
+Did bits occasionally after that but the big thing for me was in 2021 when got apprenticeship learning to be an open source maintainer, so someone who has responsibility for reviewing other people's code and the ongoing health of a project
+
 :::
 
-## 
-
-![](images/my-first-tidyverse-pr-tweet.jpg){.r-stretch}
-
-::: {.notes}
-- Yay exciting
-- Did bits occasionally after that but the big thing for me was in 2021 when got apprenticeship learning to be an open source maintainer, so someone who has responsibility for reviewing other people's code and the ongoing health of a project
-:::
-
-## {.center}
+## Arrow apprenticeship - 2021 {.center}
 
 ![](images/arrow-logo.png){.r-stretch}
 
@@ -206,9 +223,23 @@ Made first open source contribution in 2018.
 
 ## Learning to maintain Arrow
 
-::: {.placeholder}
-PLACEHOLDER IMAGE: visual representation of the complexity of the Arrow codebase. Not made yet. Ideas: a treemap of the repo by language, or a folder map of the R package wrapping C++.
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/arrow-logo.png)
 :::
+
+::: {.column width="60%"}
+Mentor curated issues for me.
+
+Read code slowly.
+
+Sketched how pieces fit together.
+
+**Only possible working full-time.**
+:::
+
+::::
 
 ::: {.notes}
 - Learning by analogy
@@ -229,9 +260,23 @@ We say AI helps us generate code but not understand how it works, but we were al
 But things have changed a lot since then...
 :::
 
-## {.center}
+## ellmer - 2026 {.center}
 
+:::: {.columns}
+
+::: {.column width="40%"}
 ![](images/ellmer-hex.png){.r-stretch}
+:::
+
+::: {.column width="60%"}
+Working on ellmer
+
+Codebase new to me
+
+Working on it part-time
+:::
+
+::::
 
 ::: {.notes}
 - 2026 - doing some work as a contractor on ellmer
@@ -253,6 +298,8 @@ Complicated codebase!
 
 ![](images/deepwiki-ellmer-chat-sequence.png){.r-stretch}
 
+<https://deepwiki.com/tidyverse/ellmer>
+
 <!-- DeepWiki sequence diagram of a single chat turn: User -> Chat (R6) ->
 Provider (S7) -> HTTP (httr2) -> LLM API and back.
 Source: https://deepwiki.com/tidyverse/ellmer (Core Architecture > Chat Object and Lifecycle) -->
@@ -269,11 +316,12 @@ Back to learning by analogy, I could ask AI what to read and in what order and s
 Now AI can generate me code, but how can I be confident the code I generate is correct?
 :::
 
-## Using skills
+## Using `SKILL.md`
 
-- Markdown instructions and (optionally) scripts an AI agent can use
-- Add consistency - define a process or set of rules to use every time
-- Saving human expertise - adding your own knowledge into the process
+- Instructions an AI agent can use
+- Written in markdown
+- Define a process or set of rules to use every time
+- Adding your own knowledge into the process
 
 ::: {.notes}
 I use skills.
@@ -289,15 +337,23 @@ Effectively, a skill is how you turn your own expertise into something the AI ca
 
 ## Using skills effectively
 
-- Loads of ones written by other people are out there and available
-- Include them in code repos - ellmer has one for writing tests
+- Find existing ones
+- Include custom skills in your code repositories
 - Write one when it gets the same thing wrong repeatedly
 
+<https://github.com/posit-dev/skills>
+
 ::: {.notes}
-Mention the Posit skills repo and their R package development ones: https://github.com/posit-dev/skills
+- Include them in your code repos - ellmer has one for writing tests
 :::
 
 ## But how can I trust the code that I generate?
+
+::: {.giant-emoji}
+❓
+:::
+
+Understand it!
 
 ::: {.notes}
 Need to be able to review it via actually knowing the codebase itself.
@@ -309,11 +365,16 @@ Designed a skill to help me do this.
 
 ## Five step process
 
-1. **Establish Learning Goals** - define what you want to learn and why
-2. **Locate and Access Resources** - identify a minimal set of things to learn from
-3. **Adopt and Execute Learning Activities** - design and work through timeboxed, hands-on activities with Socratic support
-4. **Monitor and Evaluate Performance** - checkpoints and progress tracking, mostly within step 3
-5. **Reassess Learning Strategies** - reflect on what worked and record it for next time
+1. **Establish learning goals**
+   - what do I want to learn, and why?
+2. **Locate resources**
+   - a minimal set of things to learn from
+3. **Adopt and execute learning activities**
+   - timeboxed, hands-on, with Socratic support
+4. **Monitor and evaluate performance**
+   - checkpoints along the way
+5. **Reassess learning strategies**
+   - what worked? record it for next time
 
 ::: {.notes}
 Year before, had read a paper by Xi Lin on how people could use LLMs for learning.
@@ -329,9 +390,9 @@ Made a Claude skill to help walk me through it.
 
 ## Rapid learning skill
 
-::: {.placeholder}
-PLACEHOLDER IMAGE: screenshot of the GitHub repo page for github.com/thisisnic/rapid-learning, showing the README or SKILL.md.
-:::
+A skill for quickly learning about code
+
+<https://github.com/thisisnic/rapid-learning>
 
 ::: {.notes}
 Available at this URL.
@@ -770,6 +831,7 @@ PLACEHOLDER: something on screen for this moment. Not maintainer quotes. Nic to 
 ::: {.notes}
 - Frustration. Real emotional frustration.
 - I hated reviewing PRs from new contributors. Me. The person who only got here because people were patient with my first PRs.
+- The signals are gone. The kind of mistake someone made used to tell you what they understood and what to teach them. Now the code only tells you which model wrote it.
 - Found myself arguing with other maintainers about how to handle them.
 - Had to think about it differently and didn't know how.
 :::
@@ -803,6 +865,7 @@ PLACEHOLDER IMAGE: a Copilot review comment on an Arrow PR, ideally one that's w
 - Then the stuff I did to myself.
 - Unspoken expectation: they're generating PRs fast, so I should review fast. One after another after another.
 - Abandoned the slow, methodical process I'd always used. Didn't notice I'd done it until recently.
+- Not just me. HBR study earlier this year: people using AI worked faster, took on a broader scope, and extended work into more hours of the day.
 :::
 
 ## All the caffeine
@@ -849,12 +912,7 @@ PLACEHOLDER IMAGE: coffee. Lots of it.
 - No amount of caffeine or t-shirts was going to cover a fifteenfold increase.
 :::
 
-## Not becoming the reverse centaur
-
-- AI doing the first round of reviews
-- Auto-closing stuff
-
-## 
+##
 
 ![](images/bluesky-hadley-no-one-forcing-you.jpg){.r-stretch}
 
@@ -890,21 +948,19 @@ PLACEHOLDER IMAGE: coffee. Lots of it.
 
 ## What does setting good boundaries look like?
 
-- You are allowed to say "no" without long justifications
-- Focus on your own actions not theirs
-- "If \<X\> then \<Y\>"
-
-## What does setting good boundaries look like?
-
 **You are allowed to say "no" without long justifications**
 
 - I'm not going to read a 300-line AI-written PR description
 
-**Focus on your own actions not theirs**
+## What does setting good boundaries look like?
+
+**Focus on your own actions, not theirs**
 
 - I can't stop people submitting AI-generated pull requests, but I choose which ones get my time
 
-**"If \<X\> then \<Y\>"**
+## What does setting good boundaries look like?
+
+**"If X then Y"**
 
 - If there are signs a human is engaged, they get the old, thorough review
 - If not, I close it without one
@@ -923,108 +979,20 @@ PLACEHOLDER IMAGE: coffee. Lots of it.
 - Generated code: walk me through a chunk at a time, not everything at once.
 :::
 
-## (blank)
-
-## Previous stuff...
-
-## AI generated code
-
-::: {.notes}
-Why is it hard to review AI-generated code?
-
-Other people's code
-
-- Used to be signals, gut feelings, certain mistakes gave signals
-
-Own code
-
-- Why has it made that decision?
-- Is this code fitting with the rest of the codebase?
-
-Other problem is properly reviewing AI-generated code - both my own and others
-
-- Used to be signals as to how advanced a person was or not but those are different
-- Decision fatigue
-- Found it hard to work for as long as I used to
-
-Not just me...
-
-- Why is reviewing AI code so hard?
-- Other people's code used to come with signals. Gut feelings. The kind of mistake someone makes tells you what they understand and what to teach them. Now the only thing the code tells you is which model wrote it.
-- Reviewing is harder than writing. And now it's all reviewing.
-- What it did to me: cognitive overload, decision fatigue, couldn't work as long as I used to.
-- And it's not just me...
-:::
-
-## "AI Doesn't Reduce Work - It Intensifies It"
-
-> "worked at a faster pace, took on a broader scope of tasks, and extended work into more hours of the day"
-
-<small>[hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it](https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it)</small>
-
-::: {.notes}
-- HBR, earlier this year. People using AI worked faster, took on a broader scope, and extended work into more hours of the day.
-- Doesn't feel like it's helping anybody.
-:::
-
-## But wait... very reverse centaury!
-
-::: {.notes}
-- Hold on. This tool is supposed to help me. And here I am rearranging myself around it.
-- That's the reverse centaur.
-- So: pause. What are the more sustainable, actually human ways out of this?
-:::
-
-## Get AI to do first pass -> improve own process
-
-::: {.notes}
-Getting AI to do the boring bits
-
-- Figure out what small tasks you can automate and do it. Even if it's just summaries or things for you to review.
-  - Initial AI review
-- Teaching AI how to do good code reviews
-  - Defining what does good look like and getting AI to help with it - i.e. made me define process for PR review - doing this made me reflect on what good looked like and my non-AI code review got better
-- Getting AI to walk through chunk of changes at a time
-
-1. Get AI to do the boring bits. Find small tasks to automate: a summary of what needs doing, a first-pass review.
-
-- Teaching it to review meant writing down my own process. I had to decide what good looks like.
-- Result: my non-AI reviews got better too. I know my own process now.
-- Generated code: walk me through a chunk at a time, not everything at once.
-:::
-
-## 
-
-![](images/repotracker-waiting-for-update.jpg){.r-stretch}
-
-::: {.notes}
-Decision fatigue is huge thing! Vibe coded a thing to track decisions: repotracker tool to track decisions I've made.
-
-2. Decision fatigue. The open PR list makes you make the same decisions every day. What should I review? What am I waiting on?
-
-- Vibe-coded a tracker. Notes to myself, not to the contributor. Decide once.
-:::
-
 ## {.center}
 
 ::: {.statement}
 Work differently, not harder
 :::
 
-## How can we use AI to make us more capable and not more dependent?
+## How can we use AI so we become more capable, and not dependent?
 
-3 things:
+::: {.statement style="font-size: 1.4em;"}
+Use AI to customise learning to make it work for you
 
-1. Use it to completely customise your learning in a way that works for you
-2. Use it to experiment cheaply, learn about your own reality
-3. Adapt how you work - change your workflows not yourself
+Use AI to run experiments cheaply and learn about your reality
 
-::: {.notes}
-How can we use AI to make us more capable and not more dependent? 3 things:
-
-1. Use it to completely customise your learning in a way that works for you **and you keep the knowledge**
-2. Use it to experiment cheaply, learn about your own reality **and you keep the judgment**
-3. Adapt how you work - change your workflows not yourself **and you keep control**
+Work differently, not harder
 :::
 
 ## Learning throughout history
