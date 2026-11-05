@@ -1025,11 +1025,41 @@ Alex Schomburg, cover for "The Exile of Time", Avalon Books, 1964
 "How does \<prominent maintainer\> say no?"
 :::
 
+::: {.incremental}
+- Thank them
+- Explain why
+- Move on
+:::
+
 ::: {.notes}
 - Still felt guilty saying no. A PR is someone's effort. My instinct is to welcome them.
 - So I did the section 2 thing on my own problem. Got AI to read closed tidyverse PRs: how do Hadley and Jenny say no?
 - Answer: thank them, explain why. But mostly: treat a PR as a proposal, not a gift.
 - A friend saying "gig tonight?", not a distant relative's Christmas sweater, three sizes too big and not your colour. You can say no to a proposal without being rude.
+:::
+
+## A PR is a proposal, not a gift
+
+:::: {.columns}
+
+::: {.column width="50%" .fragment}
+**A proposal**
+
+![](images/spare-ticket-text.png){height="340px" fig-align="center"}
+:::
+
+::: {.column width="50%" .fragment}
+**Not a gift**
+
+![](images/horrible-jumper.jpg){width="100%"}
+:::
+
+::::
+
+::: {.notes}
+- A proposal: a friend saying "gig tonight?". You can say no without being rude, and they'll ask again another time.
+- A gift: the distant relative's Christmas jumper, three sizes too big and not your colour. You feel obliged to wear it.
+- Treating PRs as gifts is what made saying no feel so bad.
 :::
 
 ## The actual solution
