@@ -55,6 +55,27 @@
   transform: translateY(-0.12em);
 }
 
+/* Small pale image credit pinned to the bottom right of a slide */
+.reveal .attribution {
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.5em;
+  font-size: 0.45em;
+  color: #999;
+  margin: 0;
+}
+
+/* Image credit for the title slide, whose markup Quarto generates;
+   edit the text here (TODO: confirm artist, title and year) */
+.reveal #title-slide::after {
+  content: "TODO: title slide image credit";
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.5em;
+  font-size: 0.45em;
+  color: #999;
+}
+
 /* Visible image placeholders; delete once real images are in */
 .reveal .placeholder {
   border: 2px dashed #999;

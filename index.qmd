@@ -187,10 +187,10 @@ Leads me to question... how can I use AI so I become more capable, and not depen
 So to answer this, I'm going to first talk about using AI for learning, by thinking about what it was like to start working on a new project in R before AI, and then what it was like to get started now that AI is so prevalent, and how I've stopped myself becoming the reverse centaur.
 :::
 
-# Learning about code
+# Learning about code {background-image="images/classroom.png" background-size="cover" background-opacity="0.4"}
 
-::: {.placeholder}
-IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 1950s American style, warm gouache colours, slightly faded print texture. A bright classroom of the future: rows of students at individual desks each with a small glowing TV screen, a friendly robot teacher at a chalkboard covered in code and diagrams, a woman in a red dress at the front desk studying a punch-card manual with a confident smile. Optimistic, clean, atomic-age design. Wide 16:9 composition with uncluttered space in the lower left for a title."
+::: {.attribution}
+"The Rise of the Computerized School", Shigeru Komatsuzaki, 1969
 :::
 
 ## First open source contribution - 2018
@@ -613,10 +613,10 @@ Cat Hicks: after you complete significant work (which you can self-define, but I
 So another thing that I learned when I was developing the rapid learning skill was how AI made it really easy to play around with an idea and develop it further into something useful, and that's what I'm gonna talk about next.
 :::
 
-# Learning through experimentation
+# Learning through experimentation {background-image="images/just-imagine-1930-lab.png" background-size="cover" background-opacity="0.4"}
 
-::: {.placeholder}
-IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 1950s American style, warm gouache colours, slightly faded print texture. A laboratory of the future: a woman in a red dress standing at a wall-sized control console covered in dials, reel-to-reel tapes and blinking lights, a tall silver robot beside her pointing at a glowing chart on a screen showing a jagged line going up. Through a large window, a star field and a ringed planet. Optimistic, clean, atomic-age design. Wide 16:9 composition with uncluttered space in the lower left for a title."
+::: {.attribution}
+Laboratory set from "Just Imagine", 1930
 :::
 
 ::: {.notes}
@@ -779,26 +779,24 @@ IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 19
 :::
 
 ::: {.notes}
-- Last piece of puzzle is about thinking about how we work
-- Adapt how you work with AI so you don't end up fighting it or getting overwhelmed
+- Last piece of puzzle is about thinking about how we work with AI so you don't end up fighting it or getting overwhelmed
 - Those plots I shared before that showed a small blip in the new contributors?
 :::
 
 ## 
 
-![](images/plots/new-contributors-per-month-march-2026.jpg){.r-stretch}
+![](images/plots/Janwitharrow.png){.r-stretch}
 
 ::: {.notes}
-- This one was generated in March 2026. Steady decline, flattening at the end.
+- This one was generated in March 2026, bigger scale on the y axis. Steady decline, flattening at the end.
 - Small blip in January. Let me tell you about January.
 :::
 
-## January 2026
+## Arrow in January 2026
 
-- A new contributor, verbose comments, broad scope
-- Tests either excessive or missing
-- Doesn't match the codebase conventions
-- Never asks a question
+- Loads of new code contributions
+- Way too many tests
+- Never interact much
 
 ::: {.notes}
 - Started noticing a pattern in PRs
@@ -810,11 +808,9 @@ IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 19
 
 ## Arrow's AI guidelines
 
-- Only submit a PR if you can debug and own the changes yourself
-- Match the style and conventions of the codebase
-- Be upfront about AI usage
-- Watch for verbose comments, unnecessary tests, incorrect fixes
-- Break large PRs into smaller ones
+- "Only submit a PR if you can debug and own the changes yourself"
+
+- "Be upfront about AI usage"
 
 ::: {.notes}
 - Merged end of January. Other projects linked to it.
@@ -824,60 +820,53 @@ IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 19
 
 ## The effect
 
-::: {.placeholder}
-PLACEHOLDER: something on screen for this moment. Not maintainer quotes. Nic to decide.
-:::
+- nobody paid attention
+- frustrating experience reviewing code
+- arguing with other maintainers
+
 
 ::: {.notes}
-- Frustration. Real emotional frustration.
-- I hated reviewing PRs from new contributors. Me. The person who only got here because people were patient with my first PRs.
-- The signals are gone. The kind of mistake someone made used to tell you what they understood and what to teach them. Now the code only tells you which model wrote it.
-- Found myself arguing with other maintainers about how to handle them.
-- Had to think about it differently and didn't know how.
+
 :::
 
-## More rules
+## We tried even more things!
 
-::: {.placeholder}
-PLACEHOLDER IMAGE: the AI disclosure checkboxes from the Arrow PR template.
-:::
+![](images/copilotwrong.png){.r-stretch}
 
-::: {.notes}
-- Linked the guidelines from the PR template. Then added a disclosure form: was this written by a human or AI, was it reviewed before submission.
-- Did it do anything? Not really. About a third of people just delete the section.
-- Which, to be fair, is a useful tell.
-:::
-
-## Get a robot to review it
-
-::: {.placeholder}
-PLACEHOLDER IMAGE: a Copilot review comment on an Arrow PR, ideally one that's wrong.
-:::
 
 ::: {.notes}
 - Turned on Copilot auto-review. A machine to do the first look so we don't have to.
 - Wrong often enough that you end up reviewing the reviewer. Now there's the PR and the bot's opinion of the PR, and I'm cleaning up both.
+- Problem was though the sheer volume of people
+:::
+
+## Not so bad, right?
+
+![](images/plots/Janwitharrow.png){.r-stretch}
+
+
+## Things had changed more than we thought
+
+![](images/plots/october.png){.r-stretch}
+
+::: {.notes}
+
+- Reran the analysis a couple of weeks ago. Oh. That's why.
+- PRs from accounts with nothing merged: about 7 a month in 2025. 106 in October. Over half of everything opened that month. None merged.
+- Models got good enough, people realised they can contribute with agents, and they are.
+- It's a mix. Genuine: people who never thought they could contribute, now can. Less good: code dumped that the author doesn't understand, review feedback goes straight back into the AI, nobody learned anything.
+- No amount of caffeine or t-shirts was going to cover a fifteenfold increase.
 :::
 
 ## One PR after another
 
-::: {.notes}
-- Then the stuff I did to myself.
-- Unspoken expectation: they're generating PRs fast, so I should review fast. One after another after another.
-- Abandoned the slow, methodical process I'd always used. Didn't notice I'd done it until recently.
-- Not just me. HBR study earlier this year: people using AI worked faster, took on a broader scope, and extended work into more hours of the day.
-:::
-
-## All the caffeine
-
-::: {.placeholder}
-PLACEHOLDER IMAGE: coffee. Lots of it.
-:::
+- trying to keep up
+- all the caffeine!
 
 ::: {.notes}
-- Why not just stop? Guilt. Someone put effort into this, or I assumed they did. I owe them a review.
-- So, more coffee.
+- Went to see if there was anything I could learn by analogy
 :::
+
 
 ## How do air traffic controllers maintain concentration?
 
@@ -890,31 +879,19 @@ PLACEHOLDER IMAGE: coffee. Lots of it.
 - So I tried it. Reviewing in the morning, other work in the afternoon. Little bits at a time.
 :::
 
-## 
+## Decision fatigue
 
-![](images/zuckerberg-tshirts.jpg){.r-stretch}
+![](images/zuckshirt.jpeg){.r-stretch}
 
 ::: {.notes}
-- If attention is the bottleneck, reduce the number of decisions. Zuckerberg wears the same t-shirt every day so he doesn't have to decide.
+- Decision fatigue
 - So there I am, a maintainer of an open source project, researching how to optimise my shirts so I can review more pull requests nobody read before sending.
-- That's the reverse centaur. Rearranging myself around the machine's pace.
+- That's the reverse centaur. Rearranging myself to keep up with AI machine's pace.
 :::
 
-##
+## Rethinking my approach
 
-![](images/plots/new-contributors-per-month-october-2026.jpg){.r-stretch}
-
-::: {.notes}
-- Reran the analysis a couple of weeks ago. Oh. That's why.
-- PRs from accounts with nothing merged: about 7 a month in 2025. 106 in October. Over half of everything opened that month. None merged.
-- Models got good enough, people realised they can contribute with agents, and they are.
-- It's a mix. Genuine: people who never thought they could contribute, now can. Less good: code dumped that the author doesn't understand, review feedback goes straight back into the AI, nobody learned anything.
-- No amount of caffeine or t-shirts was going to cover a fifteenfold increase.
-:::
-
-##
-
-![](images/bluesky-hadley-no-one-forcing-you.jpg){.r-stretch}
+![](images/nobodyforcing.jpg){.r-stretch}
 
 ::: {.notes}
 - Spent a lot of time on Bluesky seeing how other maintainers were dealing with this. Mostly: complaining. Same as me.
@@ -935,12 +912,12 @@ PLACEHOLDER IMAGE: coffee. Lots of it.
 - A friend saying "gig tonight?", not a distant relative's Christmas sweater, three sizes too big and not your colour. You can say no to a proposal without being rude.
 :::
 
-## Set boundaries!!!
+## The actual solution
+
+Set boundaries!
 
 ::: {.notes}
-(Watch video for Blythe's saying no bit.)
 
-- Once a PR is a proposal, you're allowed to say no to it. So: boundaries.
 - With myself first. Too tired to think: tea, walk. Intentionally slow down on some tasks. Stopped trying to go faster.
 - With others. AI wall of text: I don't read it. Ask for a summary, or "can you explain this in your own words?" No proof of life, no review.
 - Engage with the humans more, the output less.
@@ -962,14 +939,13 @@ PLACEHOLDER IMAGE: coffee. Lots of it.
 
 **"If X then Y"**
 
-- If there are signs a human is engaged, they get the old, thorough review
+- If there are signs a human is engaged, I'll review their code
 - If not, I close it without one
-- If it's a small docs fix, I just do it
 
 ## Same tool, opposite roles
 
-- Copilot reviews the PR, I clean up after it
-- AI drafts a first pass, I read it, own it, act on it
+- Copilot reviews the PR, I clean up after it 👎
+- AI drafts a review locally, I read it, own it, and act on it 👍
 
 ::: {.notes}
 - AI isn't completely out of the picture.
@@ -988,11 +964,11 @@ Work differently, not harder
 ## How can we use AI so we become more capable, and not dependent?
 
 ::: {.statement style="font-size: 1.4em;"}
-Use AI to customise learning to make it work for you
+1. Use AI to customise learning to make it work for you
 
-Use AI to run experiments cheaply and learn about your reality
+2. Use AI to run experiments cheaply and learn about your reality
 
-Work differently, not harder
+3. Work differently, not harder
 :::
 
 ## Learning throughout history
@@ -1026,4 +1002,13 @@ Said at the start this felt like 2016 again. It goes back further.
 - Which side of that line you land on isn't decided by the tool. It's decided by how you use it.
 :::
 
-## Thank you!
+## Thank you! {.center}
+
+<!-- TODO: add a generated background image later, e.g.
+## Thank you! {.center background-image="images/..." background-opacity="0.4"} -->
+
+www.niccrane.com
+
+https://github.com/thisisnic
+
+https://bsky.app/profile/niccrane.bsky.social
