@@ -436,29 +436,30 @@ How to do this in a brand new codebase?
 Designed a skill to help me do this.
 :::
 
-## Five step process
+## Using LLMs for self-directed learning
 
-1. **Establish learning goals**
-   - what do I want to learn, and why?
-2. **Locate resources**
-   - a minimal set of things to learn from
-3. **Adopt and execute learning activities**
-   - timeboxed, hands-on, with Socratic support
-4. **Monitor and evaluate performance**
-   - checkpoints along the way
-5. **Reassess learning strategies**
-   - what worked? record it for next time
+
+**Lin, X (2023)**, *Exploring the Role of ChatGPT as a Facilitator for Motivating Self-Directed Learning Among Adult Learners*
+
+::: {.fragment}
+- Builds on a **five-step self-directed learning framework** (Kim et al., 2014) that predates AI
+:::
+::: {.fragment}
+- Describes where an LLM can help at each step
+:::
+
+::: {.fragment}
+Took the process, customised, and turned it into a skill
+:::
 
 ::: {.notes}
 Year before, had read a paper by Xi Lin on how people could use LLMs for learning.
 
 Describes how could apply AI to a framework for self-directed learning - this is separate to AI - framework existed, adding AI on top.
 
-So what are the 5 steps in the framework then? Go into what and why (and how LLM can help - the Xi Lin stuff).
+Tried it in August 2025 on a Shiny htmlwidget feature: about an hour, steps 1 to 3. Step 2 (resources) was frustrating, broken links. Step 3 was the best bit - a timeboxed plan, then it guided me with questions rather than answers, and I wrote the code myself.
 
 Made a Claude skill to help walk me through it.
-
-(Maybe a table with step on left and how AI can help on right?)
 :::
 
 ## Rapid learning skill
@@ -475,9 +476,11 @@ Let's look through a concrete example of using it for learning...
 
 ## Example: how do tool calls work in ellmer?
 
+Tool - let the LLM call an R function
+
 :::: {.columns}
 
-::: {.column width="45%"}
+::: {.column width="45%" .fragment}
 ```r
 library(ellmer)
 chat <- chat_anthropic()
@@ -489,19 +492,24 @@ chat$chat("what's the time")
 ```
 :::
 
-::: {.column width="55%"}
+::: {.column width="55%" .fragment}
 ```r
 library(ellmer)
 chat <- chat_anthropic()
 #> Using model = "claude-sonnet-5".
 
-time_tool <- tool(Sys.time, "Get the time", name = "time")
+time_tool <- tool(
+  Sys.time,
+  "Get the time",
+  name = "time"
+)
+
 chat$register_tool(time_tool)
 
 chat$chat("what's the time")
 #> ◯ [tool call] time()
-#> ● #> "2026-11-01 17:54:46"
-#> The current time is **5:54:46 PM** on **November 1, 2026**.
+#> ● #> "2026-11-12 08:40:46"
+#> The current time is **8:40:46 AM**.
 ```
 :::
 
@@ -518,6 +526,8 @@ I know from reading the vignette that the LLM isn't calling the R function. But.
 
 We're going to use the rapid learning skill to find out! I'm going to show you a slightly truncated version of the process.
 :::
+
+
 
 ## 1. Establish Learning Goals
 
@@ -574,7 +584,19 @@ https://github.com/thisisnic/rapid-learning/blob/main/SKILL.md#step-3-adopt-and-
 
 ## 3. Adopt and Execute Learning Activities
 
-Create a chat with one simple tool registered. Ask something that doesn't need the tool, then something that does. After each, look at `chat$get_turns()` and count how many turns one `$chat()` call added, and what role each has.
+::: {.callout-note appearance="simple" icon=false}
+**Task: Compare output with and without tool call**
+
+1. Create a chat with one simple tool registered.
+
+2. Ask something that doesn't need the tool, then something that does.
+
+3. After each, look at `chat$get_turns()` and count how many turns one `$chat()` call added, and what role each has.
+:::
+
+## 3. Adopt and Execute Learning Activities
+
+Without a tool call...
 
 ```r
 library(ellmer)
@@ -601,13 +623,15 @@ User took their turn, then the assistant did - this seems straightforward.
 
 ## 3. Adopt and Execute Learning Activities
 
+With a tool call...
+
 ```r
 time_tool <- tool(Sys.time, "Get the time", name = "time")
 chat$register_tool(time_tool)
 chat$chat("what's the time")
 #> ◯ [tool call] time()
-#> ● #> "2026-11-01 18:07:03"
-#> The current time is **6:07:03 PM** on **November 1, 2026**.
+#> ● #> "2026-11-12 08:43:13"
+#> The current time is **8:43:13 AM**.
 chat$get_turns()
 #> [[1]]
 #> <Turn: user>
@@ -633,9 +657,31 @@ chat$get_turns()
 - Spoiler - the answer is that ellmer implements these tool calls by running the R function itself, getting the result, and then sending that to the LLM as if the user had sent that information themself.
 :::
 
-## Lightbulb moment!
+## 3. Adopt and Execute Learning Activities
 
-- ellmer calls the tool's function in the R session and sends the results to the LLM as if the user had sent that message!
+With a tool call...
+
+```{.r code-line-numbers="6-12"}
+chat$get_turns()
+#> [[1]]
+#> <Turn: user>
+#> what's the time
+#>
+#> [[2]]
+#> <Turn: assistant>
+#> [tool request (toolu_01CWL6FhPozDU4LNfraEdcbU)]: time()
+#>
+#> [[3]]
+#> <Turn: user>
+#> [tool result (toolu_01CWL6FhPozDU4LNfraEdcbU)]: "2026-11-01 18:07:03"
+#>
+#> [[4]]
+#> <Turn: assistant>
+#> The current time is **6:07:03 PM** on **November 1, 2026**.
+```
+::: {.fragment}
+💡 ellmer calls the tool's function in the R session and sends the results to the LLM as if the user had sent that message!
+:::
 
 ::: {.notes}
 - So when the LLM responds, it has that information.
@@ -698,13 +744,13 @@ Laboratory set from "Just Imagine", 1930
 - Was doing lots of maintenance, but was unsure whether what I was doing was actually useful
 :::
 
-## A question
+## "What can I work on that I can be sure is having an impact?"
 
-::: {.statement}
-"What can I work on that I can be sure is having an impact?"
-:::
+::: {.fragment}
+![](images/positronassitant.png){width="700px" fig-align="center"}
 
 <small>March 2026 with Positron Assistant, using Claude Sonnet 4.6 and Claude Opus 4.5</small>
+:::
 
 ::: {.notes}
 - Decided to think about the new contributor experience - how easy is it for people to get started with contributing to arrow and has the new contributor experience got worse since we've had fewer maintainers?
