@@ -3,10 +3,6 @@ title: "Learning with AI"  # TODO: confirm final title
 subtitle: "LatinR 2026"
 author: "Nic Crane"
 date: "2026-11-12"
-title-slide-attributes:
-  data-background-image: images/retro-future-highway.jpg
-  data-background-size: cover
-  data-background-opacity: "0.4"
 format:
   clean-revealjs:
     slide-number: true
@@ -16,6 +12,12 @@ execute:
   echo: true
   eval: false
 ---
+
+## {background-image="images/retro-future-highway.jpg" background-size="cover"}
+
+::: {.attribution .right}
+Arthur Radebaugh, "Closer Than We Think", 1958–1962
+:::
 
 ## 2016 {.center}
 
@@ -737,10 +739,12 @@ Ended up with a series of classifications...
 
 ### What can I work on that I can be sure is having an impact?
 
-- Find stale PRs and ping the maintainers for an answer, or answer the question to check if they're still working on them
-- Find abandoned PRs and
-  - finish them off if they're close to completion, or
-  - close them if not so someone else can work on them (added a bot to close them)
+- Find stale PRs and either:
+  - answer the question myself
+  - ping the maintainers for an answer
+- Find abandoned PRs and either
+  - finish them off
+  - close them
 
 ::: {.notes}
 - Ended up with concrete outcomes here
@@ -772,10 +776,10 @@ Ended up with a series of classifications...
 Use AI to run experiments cheaply and learn about your reality
 :::
 
-# Adapting how you work
+# Adapting how you work {background-image="images/robot-and-woman-control-console.png" background-size="cover" background-opacity="0.4"}
 
-::: {.placeholder}
-IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 1950s American style, warm gouache colours, slightly faded print texture. The office of the future: a woman in a red dress relaxing in a bubble chair with a cup of tea, feet up, while a row of small cheerful robots do the filing and sort stacks of paper into pneumatic tubes. Monorails and flying cars pass by a huge curved window with a sunny city skyline. Optimistic, clean, atomic-age design. Wide 16:9 composition with uncluttered space in the lower left for a title."
+::: {.attribution}
+Alex Schomburg, cover for "The Exile of Time", Avalon Books, 1964
 :::
 
 ::: {.notes}
@@ -829,7 +833,7 @@ IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 19
 
 :::
 
-## We tried even more things!
+## Automatic AI code review
 
 ![](images/copilotwrong.png){.r-stretch}
 
@@ -855,13 +859,12 @@ IMAGE TO GENERATE. Prompt: "Mid-century retro-futurist magazine illustration, 19
 - PRs from accounts with nothing merged: about 7 a month in 2025. 106 in October. Over half of everything opened that month. None merged.
 - Models got good enough, people realised they can contribute with agents, and they are.
 - It's a mix. Genuine: people who never thought they could contribute, now can. Less good: code dumped that the author doesn't understand, review feedback goes straight back into the AI, nobody learned anything.
-- No amount of caffeine or t-shirts was going to cover a fifteenfold increase.
 :::
 
-## One PR after another
+## Trying to keep up
 
-- trying to keep up
 - all the caffeine!
+- just need to try harder
 
 ::: {.notes}
 - Went to see if there was anything I could learn by analogy
@@ -939,10 +942,18 @@ Set boundaries!
 
 **"If X then Y"**
 
+```r
+if(human_involved){
+  engage()
+} else {
+  close_pr()
+}
+```
+
 - If there are signs a human is engaged, I'll review their code
 - If not, I close it without one
 
-## Same tool, opposite roles
+## AI Reviews
 
 - Copilot reviews the PR, I clean up after it 👎
 - AI drafts a review locally, I read it, own it, and act on it 👍

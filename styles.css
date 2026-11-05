@@ -57,23 +57,20 @@
 
 /* Small pale image credit pinned to the bottom right of a slide */
 .reveal .attribution {
-  position: absolute;
-  right: 0.5em;
-  bottom: 0.5em;
+  position: fixed;
+  left: 1em;
+  bottom: 0.6em;
   font-size: 0.45em;
-  color: #999;
+  color: #333;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 0.2em 0.6em;
+  border-radius: 3px;
   margin: 0;
 }
 
-/* Image credit for the title slide, whose markup Quarto generates;
-   edit the text here (TODO: confirm artist, title and year) */
-.reveal #title-slide::after {
-  content: "TODO: title slide image credit";
-  position: absolute;
-  right: 0.5em;
-  bottom: 0.5em;
-  font-size: 0.45em;
-  color: #999;
+.reveal .attribution.right {
+  left: auto;
+  right: 1em;
 }
 
 /* Visible image placeholders; delete once real images are in */
