@@ -116,18 +116,24 @@ But we can counter that if we're part of a learning culture, a culture based aro
 :::: {.columns}
 
 ::: {.column width="50%"}
-![](images/centaur.jpg){height="480px"}
+![](images/centaur.png){height="480px"}
 :::
 
 ::: {.column width="50%"}
 
+::: {.fragment}
 Human head and torso, horse body.
+:::
 
+::: {.fragment}
 Human judgement and thinking, with the speed and strength of the horse.
+:::
 
+::: {.fragment}
 **An enhanced human.**
 
 e.g. human assisted by AI
+:::
 :::
 
 ::::
@@ -148,19 +154,26 @@ Favourite depiction is from Wes M at posit::conf, talks about idea by Cory Docto
 
 ::: {.column width="50%"}
 ![](images/reverse-centaur-book-cover.jpg){height="480px"}
+<small>Cory Doctorow, via Wes McKinney at posit::conf</small>
 :::
 
 ::: {.column width="50%"}
 
+::: {.fragment}
 Horse head, human legs.
+:::
 
+::: {.fragment}
 Can't really do much.
+:::
 
+::: {.fragment}
 **The worst of both worlds.**
 
 e.g. AI assisted by human
 
-<small>Cory Doctorow, via Wes McKinney at posit::conf</small>
+
+:::
 :::
 
 ::::
@@ -207,9 +220,21 @@ Did bits occasionally after that but the big thing for me was in 2021 when got a
 
 :::
 
-## Arrow apprenticeship - 2021 {.center}
+## Arrow - 2021
 
-![](images/arrow-logo.png){.r-stretch}
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/arrow-logo.png){height="380px" fig-align="center"}
+:::
+
+::: {.column width="60%"}
+Work with large datasets in R
+
+Work with Parquet files
+:::
+
+::::
 
 ::: {.notes}
 - Project was arrow
@@ -238,7 +263,10 @@ Read code slowly.
 
 Sketched how pieces fit together.
 
-**Only possible working full-time.**
+Only possible working full-time.
+
+**Learning by analogy**
+
 :::
 
 ::::
@@ -262,20 +290,37 @@ We say AI helps us generate code but not understand how it works, but we were al
 But things have changed a lot since then...
 :::
 
-## ellmer - 2026 {.center}
+## ellmer - 2026
 
 :::: {.columns}
 
 ::: {.column width="40%"}
-![](images/ellmer-hex.png){.r-stretch}
+![](images/ellmer-hex.png){height="380px" fig-align="center"}
 :::
 
 ::: {.column width="60%"}
-Working on ellmer
+Work with LLMs directly from R
+:::
 
-Codebase new to me
+::::
 
-Working on it part-time
+
+## Learning to maintain ellmer
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/ellmer-hex.png){height="380px" fig-align="center"}
+:::
+
+::: {.column width="60%"}
+
+
+Working more independently
+
+Getting up to speed faster
+
+Working part-time
 :::
 
 ::::
@@ -318,12 +363,36 @@ Back to learning by analogy, I could ask AI what to read and in what order and s
 Now AI can generate me code, but how can I be confident the code I generate is correct?
 :::
 
-## Using `SKILL.md`
+## How I write code 
 
-- Instructions an AI agent can use
-- Written in markdown
+![](images/claude.png){.r-stretch}
+
+
+## Using `SKILL.md` files
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```
+---
+name: skill-name
+description: What this skill does and when to use it
+---
+
+# Contents
+
+Instructions in Markdown describing what the agent should do
+
+```
+:::
+
+::: {.column width="50%"}
+
 - Define a process or set of rules to use every time
 - Adding your own knowledge into the process
+:::
+
+::::
 
 ::: {.notes}
 I use skills.
@@ -339,9 +408,9 @@ Effectively, a skill is how you turn your own expertise into something the AI ca
 
 ## Using skills effectively
 
-- Find existing ones
-- Include custom skills in your code repositories
-- Write one when it gets the same thing wrong repeatedly
+- Find existing ones 
+- Write your own
+- Write one when agent gets the same thing wrong repeatedly
 
 <https://github.com/posit-dev/skills>
 
@@ -349,13 +418,15 @@ Effectively, a skill is how you turn your own expertise into something the AI ca
 - Include them in your code repos - ellmer has one for writing tests
 :::
 
-## But how can I trust the code that I generate?
+## {.center}
 
-::: {.giant-emoji}
-❓
+::: {.statement}
+But how can I trust the code that I generate?
+
+::: {.fragment}
+**Understand it!**
 :::
-
-Understand it!
+:::
 
 ::: {.notes}
 Need to be able to review it via actually knowing the codebase itself.
@@ -454,11 +525,11 @@ Ask the user, **one question at a time**:
 
 | Question | My answer |
 |---|---|
-| What do you want to learn, and why? | How tool calling works in ellmer |
-| Where are you starting from? | Written and registered a tool but not looked at the ellmer code before |
-| Exactly what are you trying to achieve? | I want to know what ellmer does, like the sequence, and where tool calling fits in |
-| How would you like to learn this? | Running code and reading examples |
-| How much time do you have? | 20 minutes |
+| [What do you want to learn, and why?]{.fragment} | [How tool calling works in ellmer]{.fragment} |
+| [Where are you starting from?]{.fragment} | [Written and registered a tool but not looked at the ellmer code before]{.fragment} |
+| [Exactly what are you trying to achieve?]{.fragment} | [I want to know what ellmer does, like the sequence, and where tool calling fits in]{.fragment} |
+| [How would you like to learn this?]{.fragment} | [Running code and reading examples]{.fragment} |
+| [How much time do you have?]{.fragment} | [20 minutes]{.fragment} |
 
 ::: {.notes}
 Basically, what did the model ask you and why it mattered.
