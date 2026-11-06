@@ -16,7 +16,12 @@ execute:
 ## {background-image="images/retro-future-highway.jpg" background-size="cover"}
 
 ::: {.attribution .right}
-Arthur Radebaugh, "Closer Than We Think", 1958–1962
+Arthur Radebaugh, "Closer Than We Think", 1958
+:::
+
+::: {.notes}
+- I've recently grown an appreciation for style of art, retrofutrism - this image isn't AI genreated, it's from the 1950s imagining the future.
+- So I'm gonig to be talking about learning with AI, and I think we need to start a little in past, but not as far back as the 1950s, but 2016, when I was first learning about data science and AI.
 :::
 
 ## 2016 {.center}
@@ -476,7 +481,7 @@ Let's look through a concrete example of using it for learning...
 
 ## Example: how do tool calls work in ellmer?
 
-Tool - let the LLM call an R function
+Tool - let the LLM call an R function <!-- WAIT THE LLM CAN'T DO IT -->
 
 :::: {.columns}
 
