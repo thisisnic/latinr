@@ -481,7 +481,7 @@ Let's look through a concrete example of using it for learning...
 
 ## Example: how do tool calls work in ellmer?
 
-Tool - let the LLM call an R function <!-- WAIT THE LLM CAN'T DO IT -->
+Tool: gives the LLM access to information by running R code
 
 :::: {.columns}
 
@@ -498,7 +498,7 @@ chat$chat("what's the time")
 :::
 
 ::: {.column width="55%" .fragment}
-```r
+```{.r code-line-numbers="|5-9|11|13-16"}
 library(ellmer)
 chat <- chat_anthropic()
 #> Using model = "claude-sonnet-5".
@@ -542,8 +542,7 @@ Ask the user, **one question at a time**:
 |---|---|
 | [What do you want to learn, and why?]{.fragment} | [How tool calling works in ellmer]{.fragment} |
 | [Where are you starting from?]{.fragment} | [Written and registered a tool but not looked at the ellmer code before]{.fragment} |
-| [Exactly what are you trying to achieve?]{.fragment} | [I want to know what ellmer does, like the sequence, and where tool calling fits in]{.fragment} |
-| [How would you like to learn this?]{.fragment} | [Running code and reading examples]{.fragment} |
+| [How would you like to learn this?]{.fragment} | [Running code]{.fragment} |
 | [How much time do you have?]{.fragment} | [10 minutes]{.fragment} |
 
 ::: {.notes}
@@ -589,20 +588,20 @@ https://github.com/thisisnic/rapid-learning/blob/main/SKILL.md#step-3-adopt-and-
 ## 3. Adopt and Execute Learning Activities
 
 ::: {.callout-note appearance="simple" icon=false}
-**Task: Compare output with and without tool call**
+**Task: Compare a turn with and without a tool call**
 
-1. Create a chat with one simple tool registered.
+1. Register one simple tool.
 
-2. Ask something that doesn't need the tool, then something that does.
+2. Ask something that doesn't need it, then something that does.
 
-3. After each, look at `chat$get_turns()` and count how many turns one `$chat()` call added, and what role each has.
+3. Look at `chat$get_turns()` after each. How many turns did that add?
 :::
 
 ## 3. Adopt and Execute Learning Activities
 
 Without a tool call...
 
-```r
+```{.r code-line-numbers="|1-3|4-7|9-12|13-16"}
 library(ellmer)
 chat <- chat_anthropic()
 #> Using model = "claude-sonnet-5".
@@ -629,7 +628,7 @@ User took their turn, then the assistant did - this seems straightforward.
 
 With a tool call...
 
-```r
+```{.r code-line-numbers="|1-2|3-6|7-22"}
 time_tool <- tool(Sys.time, "Get the time", name = "time")
 chat$register_tool(time_tool)
 chat$chat("what's the time")
@@ -647,11 +646,11 @@ chat$get_turns()
 #>
 #> [[3]]
 #> <Turn: user>
-#> [tool result (toolu_01CWL6FhPozDU4LNfraEdcbU)]: "2026-11-01 18:07:03"
+#> [tool result (toolu_01CWL6FhPozDU4LNfraEdcbU)]: "2026-11-12 08:43:13"
 #>
 #> [[4]]
 #> <Turn: assistant>
-#> The current time is **6:07:03 PM** on **November 1, 2026**.
+#> The current time is **8:43:13 AM**.
 ```
 
 ::: {.notes}
@@ -677,11 +676,11 @@ chat$get_turns()
 #>
 #> [[3]]
 #> <Turn: user>
-#> [tool result (toolu_01CWL6FhPozDU4LNfraEdcbU)]: "2026-11-01 18:07:03"
+#> [tool result (toolu_01CWL6FhPozDU4LNfraEdcbU)]: "2026-11-12 08:43:13"
 #>
 #> [[4]]
 #> <Turn: assistant>
-#> The current time is **6:07:03 PM** on **November 1, 2026**.
+#> The current time is **8:43:13 AM**.
 ```
 ::: {.fragment}
 💡 ellmer calls the tool's function in the R session and sends the results to the LLM as if the user had sent that message!
