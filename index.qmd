@@ -326,6 +326,8 @@ Working more independently
 Getting up to speed faster
 
 Working part-time
+
+**Learning aided by AI**
 :::
 
 ::::
@@ -1135,7 +1137,7 @@ if(human_involved){
 ## {.center}
 
 ::: {.statement}
-Work differently, not harder
+Change how you work, not who you are
 :::
 
 ## Learning throughout history
