@@ -603,7 +603,7 @@ https://github.com/thisisnic/rapid-learning/blob/main/SKILL.md#step-3-adopt-and-
 
 Without a tool call...
 
-```{.r code-line-numbers="|1-3|4-7|9-12|13-16"}
+```{.r code-line-numbers="1-7|8-16"}
 library(ellmer)
 chat <- chat_anthropic()
 #> Using model = "claude-sonnet-5".
@@ -630,7 +630,7 @@ User took their turn, then the assistant did - this seems straightforward.
 
 With a tool call...
 
-```{.r code-line-numbers="|1-2|3-6|7-22"}
+```{.r code-line-numbers="1-2|3-6|7-22|12-18"}
 time_tool <- tool(Sys.time, "Get the time", name = "time")
 chat$register_tool(time_tool)
 chat$chat("what's the time")
@@ -666,8 +666,7 @@ chat$get_turns()
 
 With a tool call...
 
-```{.r code-line-numbers="6-12"}
-chat$get_turns()
+```{.r code-line-numbers="5-11"}
 #> [[1]]
 #> <Turn: user>
 #> what's the time
@@ -684,6 +683,7 @@ chat$get_turns()
 #> <Turn: assistant>
 #> The current time is **8:43:13 AM**.
 ```
+
 ::: {.fragment}
 💡 ellmer calls the tool's function in the R session and sends the results to the LLM as if the user had sent that message!
 :::
@@ -1138,6 +1138,12 @@ if(human_involved){
 
 ::: {.statement}
 Change how you work, not who you are
+:::
+
+::: {.notes}
+I don't want to change myself for AI, and I hope you don't want that either.
+
+[pause, breathe]
 :::
 
 ## Learning throughout history
