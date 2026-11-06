@@ -20,8 +20,10 @@ Arthur Radebaugh, "Closer Than We Think", 1958
 :::
 
 ::: {.notes}
-- I've recently grown an appreciation for style of art, retrofutrism - this image isn't AI genreated, it's from the 1950s imagining the future.
-- So I'm gonig to be talking about learning with AI, and I think we need to start a little in past, but not as far back as the 1950s, but 2016, when I was first learning about data science and AI.
+- I've recently grown an appreciation for style of art, retrofuturism - this image isn't AI generated, it's from the 1950s imagining the future.
+- And I always love how optimistic these images are, the humans relationship with technology is always so uncomplicated, the family sat there playing cards while the car drives itself
+- But actually, I don't think our relationship with changes in technology is ever that simple in practice, and I think that working with AI is a good example of this.
+- So I'm going to be talking about learning with AI, and I think we need to start a little in past, but not as far back as the 1950s, but 2016, when I was first learning about data science and AI.
 :::
 
 ## 2016 {.center}
@@ -184,14 +186,6 @@ e.g. AI assisted by human
 ::::
 
 ::: {.notes}
-CD is a comp sci writer who talks about the reverse centaur.
-
-Centaur == mythical creature with the head and body of human and back end of horse. Human skills, thinking; horse speed and strength. More than just a human, an enhanced human.
-
-Reverse centaur == head of a horse and legs of person. Useful, can kind of walk around and neigh but the worst of both worlds.
-
-Apply to AI - wanna be centaur, enhanced, not just a crap horse.
-
 Reverse centaur is a human sat there going "yes" without thinking to AI prompts, not thinking or doing anything else or learning anything.
 :::
 
@@ -348,7 +342,7 @@ Complicated codebase!
 - Had AI to help - how I used AI to help
 :::
 
-## Learning to maintain ellmer
+## DeepWiki
 
 ![](images/deepwiki-ellmer-chat-sequence.png){.r-stretch}
 
@@ -745,8 +739,7 @@ Laboratory set from "Just Imagine", 1930
 
 ::: {.notes}
 - March 2026
-- Company who had funded most of the work on Arrow - Voltron Data - had folded and so fewer paid maintainers, but some of us who were left had managed to get some funding to work on maintaining the project
-- Was doing lots of maintenance, but was unsure whether what I was doing was actually useful
+- Was doing lots of maintenance on Arrow, but was unsure whether what I was doing was actually useful
 :::
 
 ## "What can I work on that I can be sure is having an impact?"
@@ -758,23 +751,9 @@ Laboratory set from "Just Imagine", 1930
 :::
 
 ::: {.notes}
-- Decided to think about the new contributor experience - how easy is it for people to get started with contributing to arrow and has the new contributor experience got worse since we've had fewer maintainers?
+- Decided to think about the new contributor experience - how easy is it for people to get started with contributing to arrow?
 - Experimenting with Positron Assistant to produce a Quarto markdown report with plots that I could add narrative to
 - Started by asking "can you create an R script showing number of new contributors per month"
-:::
-
-## How has the number of active contributors changed?
-
-![](images/plots/active-contributors-90-day.jpg){.r-stretch}
-
-::: {.notes}
-First question - how have the changes in Voltron Data existing as a company impacted the number of people contributing to Arrow?
-
-Active contributors - people who've opened an issue or a PR in past 90 days.
-
-As expected - declined due to corporate layoffs but then flattened out and stabilised more recently after we got some funding for its maintenance.
-
-Next question then - how many new contributors per month?
 :::
 
 ## A new metric...
@@ -967,13 +946,12 @@ Alex Schomburg, cover for "The Exile of Time", Avalon Books, 1964
 
 :::
 
-## Automatic AI code review
+## Automatic AI code review with Copilot
 
-![](images/copilotwrong.png){.r-stretch}
+![](images/copilotwronggrr.png){.r-stretch}
 
 
 ::: {.notes}
-- Turned on Copilot auto-review. A machine to do the first look so we don't have to.
 - Wrong often enough that you end up reviewing the reviewer. Now there's the PR and the bot's opinion of the PR, and I'm cleaning up both.
 - Problem was though the sheer volume of people
 :::
@@ -1168,13 +1146,13 @@ I don't want to change myself for AI, and I hope you don't want that either.
 Said at the start this felt like 2016 again. It goes back further.
 
 - 370BC - Socrates complained that writing would make people bad at learning
-- 1970s - Calculators - teachers saying would make us bad at maths
+- 1970s - Calculators - people worried it would make us bad at doing maths in our heads
 - 1990s - Internet becoming mainstream, fears that people would be bad at researching topics at libraries and would just copy and paste instead
 
 - Every time: same fear. The tool will do the thinking and the skill will wither.
-- Every time, partly right. Some skills did atrophy.
+- Partly right. Some skills did atrophy.
 - And partly wrong. The baseline of what you could build or learn moved up.
-- Which side of that line you land on isn't decided by the tool. It's decided by how you use it.
+- And I think that's how you become more capable - by being considered about exactly how we use these tools.
 :::
 
 ## Thank you! {.center}
