@@ -8,6 +8,8 @@ format:
     slide-number: true
     css: styles.css
     embed-resources: true
+revealjs-plugins:
+  - chat-bubbles
 execute:
   echo: true
   eval: false
@@ -534,12 +536,32 @@ We're going to use the rapid learning skill to find out! I'm going to show you a
 
 Ask the user, **one question at a time**:
 
-| Question | My answer |
-|---|---|
-| [What do you want to learn, and why?]{.fragment} | [How tool calling works in ellmer]{.fragment} |
-| [Where are you starting from?]{.fragment} | [Written and registered a tool but not looked at the ellmer code before]{.fragment} |
-| [How would you like to learn this?]{.fragment} | [Running code]{.fragment} |
-| [How much time do you have?]{.fragment} | [10 minutes]{.fragment} |
+::: {.chat names="🤖,Nic" self="2"}
+::: {.speaker-1}
+What do you want to learn, and why?
+:::
+::: {.speaker-2 .fragment}
+How tool calling works in ellmer
+:::
+::: {.speaker-1 .fragment}
+Where are you starting from?
+:::
+::: {.speaker-2 .fragment}
+Written and registered a tool but not looked at the ellmer code before
+:::
+::: {.speaker-1 .fragment}
+How would you like to learn this?
+:::
+::: {.speaker-2 .fragment}
+Running code
+:::
+::: {.speaker-1 .fragment}
+How much time do you have?
+:::
+::: {.speaker-2 .fragment}
+10 minutes
+:::
+:::
 
 ::: {.notes}
 Basically, what did the model ask you and why it mattered.
@@ -547,12 +569,12 @@ Basically, what did the model ask you and why it mattered.
 
 ## 1. Establish Learning Goals
 
-::: {.callout-note appearance="simple" icon=false}
+::: {.chat names="🤖,Nic" self="2"}
+::: {.speaker-1}
 **Primary learning goal:** by the end of 10 minutes, be able to explain what happens during a chat turn, and where a tool call fits in.
 
-**Supporting objective:**
-
-- Compare a turn with and without a tool call and spot the difference
+**Supporting objective:** compare a turn with and without a tool call and spot the difference
+:::
 :::
 
 ::: {.notes}
@@ -583,14 +605,14 @@ https://github.com/thisisnic/rapid-learning/blob/main/SKILL.md#step-3-adopt-and-
 
 ## 3. Adopt and Execute Learning Activities
 
-::: {.callout-note appearance="simple" icon=false}
+::: {.chat names="🤖,Nic" self="2"}
+::: {.speaker-1}
 **Task: Compare a turn with and without a tool call**
 
 1. Register one simple tool.
-
 2. Ask something that doesn't need it, then something that does.
-
 3. Look at `chat$get_turns()` after each. How many turns did that add?
+:::
 :::
 
 ## 3. Adopt and Execute Learning Activities
@@ -778,21 +800,30 @@ Laboratory set from "Just Imagine", 1930
 
 ## A poor experience for newcomers?
 
-> "These PRs are sitting entirely unacknowledged, which is both a poor contributor experience and a growing triage burden for maintainers."
+::: {.chat names="🤖,Nic" self="2"}
+::: {.speaker-1}
+These PRs are sitting entirely unacknowledged, which is both a poor contributor experience and a growing triage burden for maintainers.
+:::
 
-> "Some are substantive pieces of work (look at <list of PRs>) that just didn't make it through."
+::: {.speaker-1 .fragment}
+Some are substantive pieces of work (look at \<list of PRs\>) that just didn't make it through.
+:::
 
-(sad face)
+::: {.speaker-2 .fragment}
+😢
+:::
 
-## A poor experience for newcomers? Not quite
+::: {.speaker-2 .fragment}
+🤔
+:::
 
-> "These PRs are sitting entirely unacknowledged, which is both a poor contributor experience and a growing triage burden for maintainers."
-
-- Me: "don't add judgemental comments about poor contributor experience please, just report the facts."
-
-> "Some are substantive pieces of work (look at <list of PRs>) that just didn't make it through."
-
-- Me: "hmm... how do you know? These were opened within 3 mins of each other..."
+::: {.speaker-2 .fragment}
+Don't add judgemental comments about poor contributor experience please, just report the facts.
+:::
+::: {.speaker-2 .fragment}
+Hmm... how do you know? These were opened within 3 mins of each other...
+:::
+:::
 
 ::: {.notes}
 Scepticism -> think more about the "nothing merged" and then remembered - every time we do a release, we post on social media thanking people!
