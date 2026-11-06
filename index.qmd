@@ -415,7 +415,7 @@ Effectively, a skill is how you turn your own expertise into something the AI ca
 
 - Find existing ones 
 - Write your own
-- Write one when agent gets the same thing wrong repeatedly
+- Intervene when an agent gets the same thing wrong repeatedly
 
 <https://github.com/posit-dev/skills>
 
@@ -544,7 +544,7 @@ Ask the user, **one question at a time**:
 | [Where are you starting from?]{.fragment} | [Written and registered a tool but not looked at the ellmer code before]{.fragment} |
 | [Exactly what are you trying to achieve?]{.fragment} | [I want to know what ellmer does, like the sequence, and where tool calling fits in]{.fragment} |
 | [How would you like to learn this?]{.fragment} | [Running code and reading examples]{.fragment} |
-| [How much time do you have?]{.fragment} | [20 minutes]{.fragment} |
+| [How much time do you have?]{.fragment} | [10 minutes]{.fragment} |
 
 ::: {.notes}
 Basically, what did the model ask you and why it mattered.
@@ -553,12 +553,11 @@ Basically, what did the model ask you and why it mattered.
 ## 1. Establish Learning Goals
 
 ::: {.callout-note appearance="simple" icon=false}
-**Primary learning goal:** by the end of 20 minutes, be able to describe the sequence of steps ellmer runs during a single chat turn, and say exactly where in that sequence a tool call happens and what triggers it.
+**Primary learning goal:** by the end of 10 minutes, be able to explain what happens during a chat turn, and where a tool call fits in.
 
-**Supporting objectives:**
+**Supporting objective:**
 
-- Observe a turn with and without a tool call and spot the difference in what comes back from the model
-- Locate the loop in ellmer's code that keeps the turn going until the model stops asking for tools
+- Compare a turn with and without a tool call and spot the difference
 :::
 
 ::: {.notes}
@@ -846,12 +845,14 @@ Scepticism -> think more about the "nothing merged" and then remembered - every 
 
 ## New categorisation scheme
 
-- "There was a comment in the past 3 weeks"
+::: {.incremental}
+- "There was a comment in the past 2 weeks"
   - New category: "active"
-- "Last comment was from maintainer over 3 months ago with no response from author"
+- "Last comment was from maintainer over 2 months ago with no response from author"
   - New category: "abandoned"
-- "Last comment by the author and over 3 weeks ago"
+- "Last comment by the author over a month ago, still waiting for a maintainer reply"
   - New category: "stale-risk"
+:::
 
 ::: {.notes}
 Ended up with a series of classifications...
@@ -1122,16 +1123,6 @@ if(human_involved){
 
 ::: {.statement}
 Work differently, not harder
-:::
-
-## How can we use AI so we become more capable, and not dependent?
-
-::: {.statement style="font-size: 1.4em;"}
-1. Use AI to customise learning to make it work for you
-
-2. Use AI to run experiments cheaply and learn about your reality
-
-3. Work differently, not harder
 :::
 
 ## Learning throughout history
