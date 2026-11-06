@@ -861,12 +861,14 @@ Ended up with a series of classifications...
 
 ### What can I work on that I can be sure is having an impact?
 
+::: {.incremental}
 - Find stale PRs and either:
   - answer the question myself
   - ping the maintainers for an answer
 - Find abandoned PRs and either
   - finish them off
   - close them
+:::
 
 ::: {.notes}
 - Ended up with concrete outcomes here
@@ -875,9 +877,11 @@ Ended up with a series of classifications...
 
 ## What I learned
 
+::: {.incremental}
 - Wrong answers were still useful
 - Fast iteration made me realise I was asking the wrong question
 - Domain knowledge and scepticism did the hard work
+:::
 
 ::: {.notes}
 - Even wrong answers were useful
@@ -920,9 +924,11 @@ Alex Schomburg, cover for "The Exile of Time", Avalon Books, 1964
 
 ## Arrow in January 2026
 
+::: {.incremental}
 - Loads of new code contributions
 - Way too many tests
 - Never interact much
+:::
 
 ::: {.notes}
 - Started noticing a pattern in PRs
@@ -934,9 +940,11 @@ Alex Schomburg, cover for "The Exile of Time", Avalon Books, 1964
 
 ## Arrow's AI guidelines
 
+::: {.incremental}
 - "Only submit a PR if you can debug and own the changes yourself"
 
 - "Be upfront about AI usage"
+:::
 
 ::: {.notes}
 - Merged end of January. Other projects linked to it.
@@ -946,9 +954,11 @@ Alex Schomburg, cover for "The Exile of Time", Avalon Books, 1964
 
 ## The effect
 
+::: {.incremental}
 - nobody paid attention
 - frustrating experience reviewing code
 - arguing with other maintainers
+:::
 
 
 ::: {.notes}
@@ -985,8 +995,10 @@ Alex Schomburg, cover for "The Exile of Time", Avalon Books, 1964
 
 ## Trying to keep up
 
+::: {.incremental}
 - all the caffeine!
 - just need to try harder
+:::
 
 ::: {.notes}
 - Went to see if there was anything I could learn by analogy
@@ -1107,8 +1119,10 @@ if(human_involved){
 
 ## AI Reviews
 
+::: {.incremental}
 - Copilot reviews the PR, I clean up after it 👎
 - AI drafts a review locally, I read it, own it, and act on it 👍
+:::
 
 ::: {.notes}
 - AI isn't completely out of the picture.
