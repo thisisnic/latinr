@@ -211,7 +211,11 @@ So to answer this, I'm going to first talk about using AI for learning, by think
 
 ## First open source contribution - 2018
 
-![](images/firstcontrbtweet.png){width="620px" fig-align="center"}
+![](images/firstcontrbtweet.png){.nostretch width="575px" fig-align="center"}
+
+::: {.giant-emoji .fragment}
+🎉
+:::
 
 
 ::: {.notes}
@@ -366,7 +370,7 @@ Back to learning by analogy, I could ask AI what to read and in what order and s
 Now AI can generate me code, but how can I be confident the code I generate is correct?
 :::
 
-## How I write code 
+## Writing code with AI
 
 ![](images/claude.png){.r-stretch}
 
@@ -484,11 +488,12 @@ Tool: gives the LLM access to information by running R code
 :::: {.columns}
 
 ::: {.column width="45%" .fragment}
-```r
+```{.r code-line-numbers="1|2|5|6-8|1-8"}
 library(ellmer)
 chat <- chat_anthropic()
-chat$chat("what's the time")
 #> Using model = "claude-sonnet-5".
+
+chat$chat("what's the time")
 #> I don't have access to real-time
 #> information, so I can't tell you
 #> the current time.
@@ -496,18 +501,18 @@ chat$chat("what's the time")
 :::
 
 ::: {.column width="55%" .fragment}
-```{.r code-line-numbers="|5-9|11|13-16"}
+```{.r code-line-numbers="1|2|5-9|11|13|16|1-16"}
 library(ellmer)
 chat <- chat_anthropic()
 #> Using model = "claude-sonnet-5".
 
-time_tool <- tool(
-  Sys.time,
-  "Get the time",
+time <- tool(
+  fun = Sys.time,
+  description = "Get the time",
   name = "time"
 )
 
-chat$register_tool(time_tool)
+chat$register_tool(time)
 
 chat$chat("what's the time")
 #> ◯ [tool call] time()
@@ -517,6 +522,10 @@ chat$chat("what's the time")
 :::
 
 ::::
+
+::: {.fragment}
+The LLM can't run R. So who called `time()`? 🤔
+:::
 
 ::: {.notes}
 Tools - give LLMs extra functionality they don't have before.
@@ -532,12 +541,11 @@ We're going to use the rapid learning skill to find out! I'm going to show you a
 
 
 
-## 1. Establish Learning Goals
+## Using the rapid learning skill
 
-Ask the user, **one question at a time**:
-
+### 1. Establish Learning Goals
 ::: {.chat names="🤖,Nic" self="2"}
-::: {.speaker-1}
+::: {.speaker-1 .fragment}
 What do you want to learn, and why?
 :::
 ::: {.speaker-2 .fragment}
@@ -547,7 +555,7 @@ How tool calling works in ellmer
 Where are you starting from?
 :::
 ::: {.speaker-2 .fragment}
-Written and registered a tool but not looked at the ellmer code before
+I've used tools in ellmer before but that's it
 :::
 ::: {.speaker-1 .fragment}
 How would you like to learn this?
@@ -567,13 +575,15 @@ How much time do you have?
 Basically, what did the model ask you and why it mattered.
 :::
 
-## 1. Establish Learning Goals
+## Using the rapid learning skill
 
+### 1. Establish Learning Goals
 ::: {.chat names="🤖,Nic" self="2"}
-::: {.speaker-1}
+::: {.speaker-1 .fragment}
 **Primary learning goal:** by the end of 10 minutes, be able to explain what happens during a chat turn, and where a tool call fits in.
-
-**Supporting objective:** compare a turn with and without a tool call and spot the difference
+:::
+::: {.speaker-1 .fragment}
+**Supporting objective:** compare a conversation with and without a tool call and spot the difference
 :::
 :::
 
@@ -581,33 +591,27 @@ Basically, what did the model ask you and why it mattered.
 Would I have done this if I'd tried learning these things on my own? No!
 :::
 
-## 2. Locate and Access Resources
+## Using the rapid learning skill
 
-**Outside of the current codebase:** ask questions to figure out what resources are going to be most appropriate
-
-**The current codebase:** don't ask the user anything, find the relevant files yourself
-
-<!-- TODO: fill this in from
-https://github.com/thisisnic/rapid-learning/blob/main/SKILL.md#step-2-locate-and-access-resources -->
-
-## 3. Adopt and Execute Learning Activities
-
-- 2-5 hands-on time-boxed activities
-- Socratic method - ask the learner questions to help them understand
-- Adapt based on responses (if frustrated ask fewer questions!)
-
-::: {.notes}
-https://github.com/thisisnic/rapid-learning/blob/main/SKILL.md#step-3-adopt-and-execute-learning-activities
-
-- Socratic method
-- Don't forget the stuff you added like getting it to check the time as we go
+### 2. Locate and Access Resources
+::: {.chat names="🤖,Nic" self="2"}
+::: {.speaker-1 .fragment}
+You want to learn by running code, so our resource is an R session with ellmer loaded.
+:::
 :::
 
-## 3. Adopt and Execute Learning Activities
+::: {.notes}
+- For a codebase you're already in, the skill says don't ask, go and find the files. It found these three itself and told me, no questions.
+- For an external topic it would ask what kind of resources I wanted first.
+:::
+
+## Using the rapid learning skill
+
+### 3. Adopt and Execute Learning Activities
 
 ::: {.chat names="🤖,Nic" self="2"}
-::: {.speaker-1}
-**Task: Compare a turn with and without a tool call**
+::: {.speaker-1 .fragment}
+**Activity 1: Compare a conversation with and without a tool call**
 
 1. Register one simple tool.
 2. Ask something that doesn't need it, then something that does.
@@ -615,8 +619,18 @@ https://github.com/thisisnic/rapid-learning/blob/main/SKILL.md#step-3-adopt-and-
 :::
 :::
 
-## 3. Adopt and Execute Learning Activities
+::: {.notes}
+https://github.com/thisisnic/rapid-learning/blob/main/SKILL.md#step-3-adopt-and-execute-learning-activities
 
+- 2-5 hands-on time-boxed activities
+- Socratic method - ask the learner questions to help them understand
+- Adapt based on responses (if frustrated ask fewer questions!)
+- Don't forget the stuff you added like getting it to check the time as we go
+:::
+
+## Using the rapid learning skill
+
+### 3. Adopt and Execute Learning Activities
 Without a tool call...
 
 ```{.r code-line-numbers="1-7|8-16"}
@@ -642,13 +656,14 @@ chat$get_turns()
 User took their turn, then the assistant did - this seems straightforward.
 :::
 
-## 3. Adopt and Execute Learning Activities
+## Using the rapid learning skill
 
+### 3. Adopt and Execute Learning Activities
 With a tool call...
 
 ```{.r code-line-numbers="1-2|3-6|7-22|12-18"}
-time_tool <- tool(Sys.time, "Get the time", name = "time")
-chat$register_tool(time_tool)
+time <- tool(fun = Sys.time, description = "Get the time", name = "time")
+chat$register_tool(time)
 chat$chat("what's the time")
 #> ◯ [tool call] time()
 #> ● #> "2026-11-12 08:43:13"
@@ -660,11 +675,11 @@ chat$get_turns()
 #>
 #> [[2]]
 #> <Turn: assistant>
-#> [tool request (toolu_01CWL6FhPozDU4LNfraEdcbU)]: time()
+#> [tool request (toolu_01CW...)]: time()
 #>
 #> [[3]]
 #> <Turn: user>
-#> [tool result (toolu_01CWL6FhPozDU4LNfraEdcbU)]: "2026-11-12 08:43:13"
+#> [tool result (toolu_01CW...)]: "2026-11-12 08:43:13"
 #>
 #> [[4]]
 #> <Turn: assistant>
@@ -678,50 +693,153 @@ chat$get_turns()
 - Spoiler - the answer is that ellmer implements these tool calls by running the R function itself, getting the result, and then sending that to the LLM as if the user had sent that information themself.
 :::
 
-## 3. Adopt and Execute Learning Activities
+## Using the rapid learning skill
 
+### 3. Adopt and Execute Learning Activities
 With a tool call...
 
-```{.r code-line-numbers="5-11"}
+:::: {.columns}
+
+::: {.column width="55%"}
+```r
 #> [[1]]
 #> <Turn: user>
 #> what's the time
 #>
 #> [[2]]
 #> <Turn: assistant>
-#> [tool request (toolu_01CWL6FhPozDU4LNfraEdcbU)]: time()
+#> [tool request]: time()
 #>
 #> [[3]]
 #> <Turn: user>
-#> [tool result (toolu_01CWL6FhPozDU4LNfraEdcbU)]: "2026-11-12 08:43:13"
+#> [tool result]: "2026-11-12 08:43:13"
 #>
 #> [[4]]
 #> <Turn: assistant>
 #> The current time is **8:43:13 AM**.
 ```
+:::
 
-::: {.fragment}
-💡 ellmer calls the tool's function in the R session and sends the results to the LLM as if the user had sent that message!
+::: {.column width="45%"}
+::: {.chat names="🤖,Nic" self="2"}
+::: {.speaker-2 .fragment}
+The assistant turn is calling `time()`?
+:::
+::: {.speaker-1 .fragment}
+Is it calling it, or requesting it?
+:::
+::: {.speaker-2 .fragment}
+Oh. Requesting.
+:::
+::: {.speaker-1 .fragment}
+Right. The model never calls anything. It only asks. And what do you see in the third turn?
+:::
+:::
+:::
+
+::::
+
+::: {.notes}
+- Real exchange from the session, reordered: I misread the printout as the model calling the function, and the agent corrects that. This answers "who called time()?".
+:::
+
+## Using the rapid learning skill
+
+### 3. Adopt and Execute Learning Activities
+
+With a tool call...
+
+:::: {.columns}
+
+::: {.column width="55%"}
+```r
+#> [[1]]
+#> <Turn: user>
+#> what's the time
+#>
+#> [[2]]
+#> <Turn: assistant>
+#> [tool request]: time()
+#>
+#> [[3]]
+#> <Turn: user>
+#> [tool result]: "2026-11-12 08:43:13"
+#>
+#> [[4]]
+#> <Turn: assistant>
+#> The current time is **8:43:13 AM**.
+```
+:::
+
+::: {.column width="45%"}
+::: {.chat names="🤖,Nic" self="2"}
+::: {.speaker-2 .fragment}
+There's a user turn with the result, but I didn't type that.
+:::
+::: {.speaker-1 .fragment}
+So who ran `time()`?
+:::
+::: {.speaker-2 .fragment}
+...ellmer?
+:::
+::: {.speaker-1 .fragment}
+And who did it send the result to, and as whom?
+:::
+::: {.speaker-2 .fragment}
+To the LLM. As me?
+:::
+::: {.speaker-1 .fragment}
+Yes. Why would it need to do that?
+:::
+::: {.speaker-2 .fragment}
+So the LLM has what it needs to answer.
+:::
+:::
+:::
+
+::::
+
+::: {.notes}
+- The tool result comes back as a *user* turn. I didn't send it, so something else did: ellmer. This is the hand-off into going and finding the loop in the code.
+:::
+
+## Using the rapid learning skill
+
+### 4. Monitor and Evaluate Performance
+
+::: {.chat names="🤖,Nic" self="2"}
+::: {.speaker-1 .fragment}
+Checkpoint before we move on. In your own words: who decides to use the tool, who runs it, and who sees the result?
+:::
+::: {.speaker-2 .fragment}
+The LLM decides, ellmer runs it, and the LLM gets the result as if I'd sent it.
+:::
+::: {.speaker-1 .fragment}
+That's the whole mechanism, and you got there yourself. 🎉 Activity 1 done, five minutes under its timebox.
+:::
 :::
 
 ::: {.notes}
-- So when the LLM responds, it has that information.
-- But at this point, I only notice there's an extra user turn, and so the agent keeps asking me questions about what I can see here and what I think it does until we switch over to the code to trace it through, and it all makes sense!
+- Checkpoint questions to check crucial ideas are understood (the "in your own words" question)
+- Congratulate after each completed activity (and it checked the clock: five minutes under the timebox)
+- Summarise what was learned
 :::
 
-## 4. Monitor and Evaluate Performance
+## Using the rapid learning skill
 
-- Checkpoint questions - AI asks to make sure crucial ideas are understood
-- Congratulate after each completed activity
-- Summarise what learned
+### 5. Reassess Learning Strategies
 
-## 5. Reassess Learning Strategies
-
-- What worked well and what didn't?
-- What was the most valuable thing?
-- Did you achieve your goals?
-
-Instructions to feed back into the skill.
+::: {.chat names="🤖,Nic" self="2"}
+::: {.speaker-1 .fragment}
+What was most valuable about this session?
+:::
+::: {.speaker-2 .fragment}
+Comparing the two conversations side by side.
+:::
+::: {.speaker-1 .fragment}
+Noted. I'll lead with a comparison next time.
+:::
+:::
 
 ::: {.notes}
 Don't forget to tie this in to the paper and maybe also Simon Couch's stuff too.
@@ -769,12 +887,12 @@ Laboratory set from "Just Imagine", 1930
 ::: {.fragment}
 ![](images/positronassitant.png){width="700px" fig-align="center"}
 
-<small>March 2026 with Positron Assistant, using Claude Sonnet 4.6 and Claude Opus 4.5</small>
+<small>March 2026 with Posit Assistant, using Claude Sonnet 4.6 and Claude Opus 4.5</small>
 :::
 
 ::: {.notes}
 - Decided to think about the new contributor experience - how easy is it for people to get started with contributing to arrow?
-- Experimenting with Positron Assistant to produce a Quarto markdown report with plots that I could add narrative to
+- Experimenting with Posit Assistant to produce a Quarto markdown report with plots that I could add narrative to
 - Started by asking "can you create an R script showing number of new contributors per month"
 :::
 
