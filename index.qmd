@@ -262,15 +262,15 @@ Work with Parquet files
 :::
 
 ::: {.column width="60%"}
-Mentor curated issues for me.
+[Mentor curated issues for me.]{.fragment}
 
-Read code slowly.
+[Read code slowly.]{.fragment}
 
-Sketched how pieces fit together.
+[Sketched how pieces fit together.]{.fragment}
 
-Only possible working full-time.
+[Only possible working full-time.]{.fragment}
 
-**Learning by analogy**
+[**Learning by analogy**]{.fragment}
 
 :::
 
@@ -321,13 +321,13 @@ Work with LLMs directly from R
 ::: {.column width="60%"}
 
 
-Working more independently
+[Working more independently]{.fragment}
 
-Getting up to speed faster
+[Getting up to speed faster]{.fragment}
 
-Working part-time
+[Working part-time]{.fragment}
 
-**Learning aided by AI**
+[**Learning aided by AI**]{.fragment}
 :::
 
 ::::
@@ -379,7 +379,7 @@ Now AI can generate me code, but how can I be confident the code I generate is c
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 ```
 ---
 name: skill-name
@@ -395,8 +395,11 @@ Instructions in Markdown describing what the agent should do
 
 ::: {.column width="50%"}
 
+::: {.incremental}
 - Define a process or set of rules to use every time
 - Adding your own knowledge into the process
+:::
+
 :::
 
 ::::
@@ -487,8 +490,8 @@ Tool: gives the LLM access to information by running R code
 
 :::: {.columns}
 
-::: {.column width="45%" .fragment}
-```{.r code-line-numbers="1|2|5|6-8|1-8"}
+::: {.column width="45%" .fragment fragment-index=0}
+```{.r code-line-numbers="1|2|5|6-8|1-8" data-fragment-index="1"}
 library(ellmer)
 chat <- chat_anthropic()
 #> Using model = "claude-sonnet-5".
@@ -500,8 +503,8 @@ chat$chat("what's the time")
 ```
 :::
 
-::: {.column width="55%" .fragment}
-```{.r code-line-numbers="1|2|5-9|11|13|16|1-16"}
+::: {.column width="55%" .fragment fragment-index=5}
+```{.r code-line-numbers="1|2|5-9|11|13|16|1-16" data-fragment-index="6"}
 library(ellmer)
 chat <- chat_anthropic()
 #> Using model = "claude-sonnet-5".
@@ -523,7 +526,19 @@ chat$chat("what's the time")
 
 ::::
 
-::: {.fragment}
+```{=html}
+<!-- Pass each code block's fragment order down to the element the line highlighter reads,
+     so the question below can appear together with the final "whole code" step -->
+<script>
+document.currentScript.closest("section").querySelectorAll("div.sourceCode[data-fragment-index]").forEach(function (d) {
+  var code = d.querySelector("pre code");
+  if (code) code.setAttribute("data-fragment-index", d.getAttribute("data-fragment-index"));
+  d.removeAttribute("data-fragment-index");
+});
+</script>
+```
+
+::: {.fragment fragment-index=11}
 The LLM can't run R. So who called `time()`? 🤔
 :::
 
@@ -1275,18 +1290,24 @@ I don't want to change myself for AI, and I hope you don't want that either.
 
 ## Learning throughout history
 
-:::: {.columns}
+:::: {.columns .eras}
 
-::: {.column width="30%"}
-![](images/papyrus.png){height="380px" fig-align="center"}
+::: {.column .fragment width="33%"}
+![](images/papyrus.png){fig-align="center"}
+
+[370 BC · Writing]{.era}
 :::
 
-::: {.column width="25%"}
-![](images/calculator.jpg){height="380px" fig-align="center"}
+::: {.column .fragment width="33%"}
+![](images/calculator.jpg){fig-align="center"}
+
+[1970s · Calculators]{.era}
 :::
 
-::: {.column width="45%"}
-![](images/browser-address-bar.jpg){width="100%"}
+::: {.column .fragment width="33%"}
+![](images/browser-address-bar.jpg){fig-align="center" style="object-position: 72% 50%;"}
+
+[1990s · The internet]{.era}
 :::
 
 ::::
