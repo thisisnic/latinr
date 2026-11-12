@@ -595,7 +595,7 @@ Basically, what did the model ask you and why it mattered.
 ### 1. Establish Learning Goals
 ::: {.chat names="🤖,Nic" self="2"}
 ::: {.speaker-1 .fragment}
-**Primary learning goal:** by the end of 10 minutes, be able to explain what happens during a chat turn, and where a tool call fits in.
+**Primary learning goal:** by the end of 10 minutes, be able to explain what happens between asking a question and getting an answer, and where a tool call fits in.
 :::
 ::: {.speaker-1 .fragment}
 **Supporting objective:** compare a conversation with and without a tool call and spot the difference
@@ -628,9 +628,9 @@ You want to learn by running code, so our resource is an R session with ellmer l
 ::: {.speaker-1 .fragment}
 **Activity 1: Compare a conversation with and without a tool call**
 
-1. Register one simple tool.
-2. Ask something that doesn't need it, then something that does.
-3. Look at `chat$get_turns()` after each. How many turns did that add?
+1. Start a conversation and ask a simple question.
+2. Register a tool, then ask a question that will need the tool to answer.
+3. After each question, run `chat$get_turns()` to list everything sent back and forth. What extra steps does the tool call add?
 :::
 :::
 
@@ -676,7 +676,7 @@ User took their turn, then the assistant did - this seems straightforward.
 ### 3. Adopt and Execute Learning Activities
 With a tool call...
 
-```{.r code-line-numbers="1-2|3-6|7-22|12-18"}
+```{.r code-line-numbers="1-2|3-6|7-22"}
 time <- tool(fun = Sys.time, description = "Get the time", name = "time")
 chat$register_tool(time)
 chat$chat("what's the time")
