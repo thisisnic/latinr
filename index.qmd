@@ -716,7 +716,7 @@ With a tool call...
 :::: {.columns}
 
 ::: {.column width="55%"}
-```r
+```{.r startFrom="8"}
 #> [[1]]
 #> <Turn: user>
 #> what's the time
@@ -737,6 +737,9 @@ With a tool call...
 
 ::: {.column width="45%"}
 ::: {.chat names="🤖,Nic" self="2"}
+::: {.speaker-1 .fragment}
+What do you see in the second turn?
+:::
 ::: {.speaker-2 .fragment}
 The assistant turn is calling `time()`?
 :::
@@ -767,7 +770,7 @@ With a tool call...
 :::: {.columns}
 
 ::: {.column width="55%"}
-```r
+```{.r startFrom="8"}
 #> [[1]]
 #> <Turn: user>
 #> what's the time
