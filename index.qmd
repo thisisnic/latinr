@@ -1241,13 +1241,17 @@ Set boundaries!
 
 **You are allowed to say "no" without long justifications**
 
+::: {.incremental}
 - I'm not going to read a 300-line AI-written PR description
+:::
 
 ## What does setting good boundaries look like?
 
 **Focus on your own actions, not theirs**
 
+::: {.incremental}
 - I can't stop people submitting AI-generated pull requests, but I choose which ones get my time
+:::
 
 ## What does setting good boundaries look like?
 
@@ -1261,8 +1265,10 @@ if(human_involved){
 }
 ```
 
+::: {.incremental}
 - If there are signs a human is engaged, I'll review their code
 - If not, I close it without one
+:::
 
 ## AI Reviews
 
