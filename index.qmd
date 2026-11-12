@@ -6,6 +6,7 @@ date: "2026-11-12"
 format:
   clean-revealjs:
     slide-number: true
+    footer: "[thisisnic.github.io/latinr](https://thisisnic.github.io/latinr/)"
     css: styles.css
     embed-resources: true
 revealjs-plugins:
